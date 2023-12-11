@@ -1,0 +1,805 @@
+<style>
+    .form-control {
+        width: 60%;
+    }
+
+    .accordion-wrapper {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .accordion+.title {
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        background: #395F6F;
+
+        border-radius: 4px;
+    }
+
+    .accordion~.title strong {
+        line-height: 24px;
+        color: white;
+    }
+
+    .accordion~.title .side-icon {
+        display: block;
+    }
+
+    .accordion:checked~.title .side-icon {
+        display: none;
+    }
+
+    .accordion~.title .down-icon {
+        display: none;
+    }
+
+    .accordion:checked~.title .down-icon {
+        display: block;
+    }
+
+    .accordion~.content {
+        display: none;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .accordion:checked~.content {
+        display: block;
+    }
+
+    .form-control1 {
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        background-image: none;
+        border: 1px solid #F4F5F6;
+        border-radius: 4px;
+    }
+</style>
+
+
+
+<form id="breakingbad">
+    <datalist id="patientid">
+        <option value="Cambridge">
+    </datalist>
+    <label style="font-size:larger ;"><b>New Emotional And Psychosocial Assessment
+        </b></label>
+    <input type="button" class="btn btn-primary float-right" id='epas_button'
+        style="right:10%; z-index:9; background-color: #395F6F;color: white;" value="Save">
+    <br><br>
+    <div class="form-row">
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <div class="form-check col-md-12" style="padding-left: 4%;">
+                <br>
+                <input class="form-check-input" type="checkbox" id="npatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">New Patient</label>
+            </div>
+            <div class="form-check col-md-12" style="padding-left: 4%;">
+                <input class="form-check-input" type="checkbox" id="epatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">Existing Patient</label>
+            </div><br>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="pdisplay">
+                <label for="inputEmail4">Patient</label>
+                <input type="text" class="form-control" id="patient" placeholder="" list="patientid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="fdisplay">
+                <label for="inputEmail4">First Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="first_name" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="sdisplay">
+                <label for="inputEmail4">Surname <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="surname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="nameP">
+                <label for="inputPassword4">Patient Name</label>
+                <input type="text" readonly class="form-control" id="patientname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputPassword4">Date <span style="color:red;">*</span></label>
+                <input type="date" class="form-control" id="date" placeholder="" name="city" list="citynames"
+                    required="true">
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+        <br>
+        <label style="font-weight: bold;font-size: larger;padding-left: 2%;">Family And Social Aspects</label>
+        <div class="form-row" style="padding-left: 2%;">
+
+
+            <br>
+            <div class="form-group col-md-4">
+                <label for="inputState">Family</label><br>
+                <select id="family" class="form-control1">
+                    <option selected></option>
+                    <option>Supportive</option>
+                    <option>Non Supportive</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Community</label><br>
+                <select id="community" class="form-control1">
+                    <option selected></option>
+                    <option>Supportive</option>
+                    <option>Non Supportive</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Functionality</label><br>
+                <select id="functionality" class="form-control1">
+                    <option selected></option>
+                    <option>Functional</option>
+                    <option>Semi Functional</option>
+                    <option>Dysfunctional</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="inputState">Family Score</label><br>
+                <select id="fscore" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Community Score</label><br>
+                <select id="cscore" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="inputState">Functionality Score</label><br>
+                <select id="funscore" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                <br>
+            </div>
+        </div>
+    </div><br>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+        <div class="form-group col-md-12" style="margin-left: 1%;">
+            <br>
+            <label for="inputState">Insight into illness</label><br>
+            <select id="isillness" class="form-control1">
+                <option selected></option>
+                <option>Aware about Illness</option>
+                <option>Not aware about Illness</option>
+                <option>Does not want to know</option>
+                <option>In Denial</option>
+            </select>
+            <br>
+        </div>
+        <br>
+    </div>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;margin-top: 2%;">
+        <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+            <input type="checkbox" class="accordion" hidden />
+            <div class="title" style="background: none;">
+
+                <label
+                    style="font-weight: bold;font-size: larger;margin-left: 2%;margin-top: 1.5%;margin-bottom: 1.5%;">Communication
+                    Pattern</label>
+                <div style="margin-right: 76%;">
+                    <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                        <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                    </svg>
+                    <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                        <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="content" style="margin-left: 1%;">
+                <div class="form-group col-md-12">
+
+                    <label>W=Withdrawn</label><br>
+                    <select id="withdrawn" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>E = Easy to talk</label><br>
+                    <select id="easy" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>SS= Slurred Speech</label><br>
+                    <select id="slurred" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-12">
+
+                    <label>CS =Clear Speech</label><br>
+                    <select id="clear" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>UT = Unable to Talk</label><br>
+                    <select id="unable" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>TE=Talks Easily</label><br>
+                    <select id="talk" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>Others</label>
+                    <textarea type="text" class="form-control" id="others1" placeholder=""></textarea>
+
+                </div>
+            </div>
+        </label>
+    </div>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;margin-top: 2%">
+        <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+            <input type="checkbox" class="accordion" hidden />
+            <div class="title" style="background: none;">
+                <label
+                    style="font-weight: bold;font-size: larger;margin-left: 2%;margin-top: 1.5%;margin-bottom: 1.5%;">Emotional
+                    Stage - Patient</label>
+                <div style="margin-right: 74%;">
+                    <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                        <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                    </svg>
+                    <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                        <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="content" style="margin-left: 1%;">
+                <div class="form-group col-md-12">
+
+                    <label>S= Shock</label><br>
+                    <select id="shock" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-12">
+
+                    <label>D= Denial</label><br>
+                    <select id="denial" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>H =Hope</label><br>
+                    <select id="hope" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>A =Acceptance</label><br>
+                    <select id="acceptance" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>Others</label>
+                    <textarea type="text" class="form-control" id="others2" placeholder=""></textarea>
+
+                </div>
+
+            </div>
+        </label>
+    </div>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;margin-top: 2%">
+        <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+            <input type="checkbox" class="accordion" hidden />
+            <div class="title" style="background: none;">
+                <label
+                    style="font-weight: bold;font-size: larger;margin-left: 2%;margin-top: 1.5%;margin-bottom: 1.5%;">Emotions</label>
+                <div style="margin-right: 87%;">
+                    <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                        <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                    </svg>
+                    <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                        <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="content" style="margin-left: 1%;">
+                <div class="form-group col-md-12">
+
+                    <label>S =Sad</label><br>
+                    <select id="sad" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>A = Anger</label><br>
+                    <select id="anger" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>G= Guilt</label><br>
+                    <select id="guilt" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-12">
+
+                    <label>SH = Shame</label><br>
+                    <select id="shame" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>D = Depression</label><br>
+                    <select id="depression" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>ST = Suicidal Tendencies</label><br>
+                    <select id="suicidal" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>Others</label>
+                    <textarea type="text" class="form-control" id="others3" placeholder=""></textarea>
+
+                </div>
+            </div>
+        </label>
+    </div>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;margin-top: 2%">
+        <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+            <input type="checkbox" class="accordion" hidden />
+            <div class="title" style="background: none;">
+                <label
+                    style="font-weight: bold;font-size: larger;margin-left: 2%;margin-top: 1.5%;margin-bottom: 1.5%;">Fears
+                    Identified</label>
+                <div style="margin-right: 82%;">
+                    <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                        <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                    </svg>
+                    <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                        <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="content" style="margin-left: 1%;">
+                <div class="form-group col-md-12">
+                    <label>Of Death</label><br>
+                    <select id="death" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+<<<<<<< HEAD
+
+=======
+>>>>>>> 643a34f59d435479900f4c37ec18fab16938978e
+                    <label>Of severe pain</label><br>
+                    <select id="severepain" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Of leaving family behind</label><br>
+                    <select id="leaving_family" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputPassword4">Of meeting God</label><br>
+                    <select class="form-control1" id="ofmeeting">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Others (Specify in Notes)</label>
+                    <textarea type="text" class="form-control" id="others4" placeholder=""></textarea>
+                </div>
+            </div>
+        </label>
+    </div>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;margin-top: 2%">
+        <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+            <input type="checkbox" class="accordion" hidden />
+            <div class="title" style="background: none;">
+                <label
+                    style="font-weight: bold;font-size: larger;margin-left: 2%;margin-top: 1.5%;margin-bottom: 1.5%;">Spiritual
+                    Issues identified</label>
+                <div style="margin-right: 74%;">
+                    <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                        <path
+                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                    </svg>
+                    <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                        <path
+                            d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="content" style="margin-left: 1%;">
+                <div class="form-group col-md-12">
+
+                    <label>Angry with God</label><br>
+                    <select id="angrywith" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-12">
+
+                    <label>Broken Relationships</label><br>
+                    <select id="broken" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>Forgiveness</label><br>
+                    <select id="forgiveness" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>Belief in after life</label><br>
+                    <select id="belief" class="form-control1">
+                        <option selected></option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>Others (Specify in notes section)</label>
+                    <textarea type="text" class="form-control" id="others5" placeholder=""></textarea>
+
+                </div>
+                <div class="form-group col-md-12">
+
+                    <label>PALCARE team member ID number</label>
+                    <input type="text" class="form-control" id="pteam" placeholder="">
+
+                </div>
+            </div>
+        </label>
+    </div>
+
+</form>

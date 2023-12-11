@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "autoname": "FINAL-.####",
+ "creation": "2022-01-27 15:03:56.839935",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "final_summary",
+  "patient_name",
+  "patient",
+  "date",
+  "care_priority_hml",
+  "visit_frequency",
+  "strong_opioids",
+  "anti_depressants",
+  "pain_score",
+  "nausea_score",
+  "dyspnoea_score",
+  "ghq",
+  "family_support",
+  "family_func",
+  "caregiver",
+  "patient_insight",
+  "communication_pattern",
+  "karnofsky",
+  "team_member"
+ ],
+ "fields": [
+  {
+   "fieldname": "final_summary",
+   "fieldtype": "Section Break",
+   "label": "Final Summary (Incl Karnofsky)"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "care_priority_hml",
+   "fieldtype": "Select",
+   "label": "Care Priority",
+   "options": "\nHigh\nMedium\nLow"
+  },
+  {
+   "fieldname": "visit_frequency",
+   "fieldtype": "Select",
+   "label": "Visit Frequency",
+   "options": "\nBi-weekly\nWeekly\nFortnightly\nMonthly\nOn Call"
+  },
+  {
+   "fieldname": "strong_opioids",
+   "fieldtype": "Select",
+   "label": "Strong Opioids",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "anti_depressants",
+   "fieldtype": "Select",
+   "label": "Anti Depressants",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "pain_score",
+   "fieldtype": "Select",
+   "label": "Pain Score",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "nausea_score",
+   "fieldtype": "Select",
+   "label": "Nausea Score",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "dyspnoea_score",
+   "fieldtype": "Select",
+   "label": "Dyspnoea Score",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "ghq",
+   "fieldtype": "Select",
+   "label": "GHQ 12",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "family_support",
+   "fieldtype": "Select",
+   "label": "Family Support",
+   "options": "\nSupportive\nNon-Supportive"
+  },
+  {
+   "fieldname": "family_func",
+   "fieldtype": "Select",
+   "label": "Family Functional Status",
+   "options": "\nFunctional\nSemi-Functional\nDysfunctional"
+  },
+  {
+   "fieldname": "caregiver",
+   "fieldtype": "Select",
+   "label": "Caregiver Attitude",
+   "options": "\nPositive\nNegative"
+  },
+  {
+   "fieldname": "patient_insight",
+   "fieldtype": "Select",
+   "label": "Patient's Insight",
+   "options": "\nAware\nDon't Want to Know\nDenial\nWant to Know\nCollusion"
+  },
+  {
+   "fieldname": "communication_pattern",
+   "fieldtype": "Select",
+   "label": "Communication pattern",
+   "options": "\nWithdrawn\nEasy to talk\nSlurred Speech\nUnable to Talk"
+  },
+  {
+   "description": "0-100",
+   "fieldname": "karnofsky",
+   "fieldtype": "Data",
+   "label": "Karnofsky Performance Scale"
+  },
+  {
+   "fieldname": "team_member",
+   "fieldtype": "Data",
+   "label": "Completed by PALCARE team member"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-11 15:08:14.854718",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Final Summary",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient",
+ "track_changes": 1
+}

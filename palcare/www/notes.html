@@ -1,0 +1,107 @@
+<style>
+    .form-control {
+        width: 60%;
+    }
+
+    .form-control1 {
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        background-image: none;
+        border: 1px solid #F4F5F6;
+        border-radius: 4px;
+    }
+</style>
+
+<form id="notes_data">
+    <datalist id="patientid">
+        <option value="">
+        <option value="Cambridge">
+        <option value="Malappuram">
+    </datalist>
+    <datalist id="doctorid">
+        <option value="">
+        <option value="Cambridge">
+    </datalist>
+    <datalist id="nurseid">
+        <option value="">
+    </datalist>
+    <datalist id="counselorid">
+        <option value="">
+    </datalist>
+
+    <label style="font-size:larger ;"><b>New Notes </b></label>
+    <input type="button" class="btn  float-right" id="notes_button"
+        style="right:10%; z-index:9;background-color: #395F6F;color: white;" value="Save"><br><br>
+    <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;"><br>
+        <div class="form-row">
+            <div class="form-check col-md-12" style="padding-left: 7%;">
+                <input class="form-check-input" type="checkbox" id="npatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">New Patient</label>
+            </div>
+            <div class="form-check col-md-12" style="padding-left: 7%;">
+                <input class="form-check-input" type="checkbox" id="epatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">Existing Patient</label>
+            </div>
+            <br><br>
+            <div class="form-group col-md-12" style="padding-left: 6%;" id="pdisplay">
+                <label for="inputEmail4">Patient <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="n_patient" placeholder="" list="patientid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 6%;" id="fdisplay">
+                <label for="inputEmail4">First Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="first_name" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 6%;" id="sdisplay">
+                <label for="inputEmail4">Surname <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="surname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 6%;" id="nameP">
+                <label for="inputPassword4">Patient Name</label>
+                <input type="text" readonly class="form-control" id="patientname" placeholder="">
+            </div>
+            <!-- <div class="form-group col-md-12" style="padding-left: 6%;">
+                <label for="inputPassword4">Doctor Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="dtr_name" placeholder="" required="true" list="doctorid">
+            </div> -->
+            <div class="form-group col-md-12" style="padding-left: 6%;">
+                <label for="inputPassword4">Date <span style="color:red;">*</span></label>
+                <input type="date" class="form-control" id="p_date" placeholder="" required="true">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 6%;">
+                <label for="inputState">Note Type <span style="color:red;">*</span></label><br>
+                <select id="note_type" class="form-control1" required="true">
+                    <option selected></option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Counsellor">Counsellor</option>
+                </select>
+            </div>
+            <div class="Doctor box col-md-12" style="padding-left: 6%;"><label for="">Doctor Name</label>
+                <input type="text" class="form-control" id="dtr_name" placeholder="" list="doctorid">
+            </div>
+            <div class="Doctor box col-md-12" style="padding-left: 6%;"><label for="">Doctor's Note</label>
+                <textarea type="text" class="form-control" id="d_notes" placeholder=""></textarea>
+            </div>
+            <div class="Nurse box col-md-12" style="padding-left: 6%;"><label for="">Nurse Name</label>
+                <input type="text" class="form-control" id="nurse_name" placeholder="" list="nurseid">
+            </div>
+            <div class="Nurse box col-md-12" style="padding-left: 6%;"><label for="">Nurse's Note</label>
+                <textarea type="text" class="form-control" id="n_notes" placeholder=""></textarea>
+            </div>
+            <div class="Counsellor box col-md-12" style="padding-left: 6%;"><label for="">Counsellor Name</label>
+                <input type="text" class="form-control" id="couns_name" placeholder="" list="counselorid">
+            </div>
+
+            <div class="Counsellor box col-md-12" style="padding-left: 6%;"><label for="">Counsellor's Note</label>
+                <textarea type="text" class="form-control" id="c_notes" placeholder=""></textarea>
+            </div>
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 643a34f59d435479900f4c37ec18fab16938978e
+        </div><br>
+    </div>
+</form>

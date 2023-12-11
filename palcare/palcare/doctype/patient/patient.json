@@ -1,0 +1,965 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{first_name}-{sur_name}-{#}",
+ "creation": "2022-01-27 14:58:22.815416",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_form_draft",
+  "photo",
+  "photo_of_patient",
+  "general_details",
+  "id",
+  "salutation",
+  "first_name",
+  "middle_name",
+  "sur_name",
+  "full_name",
+  "enrolment_number",
+  "date_of_enrolment",
+  "priority",
+  "zone",
+  "contact_details_section",
+  "address",
+  "pincode",
+  "locality",
+  "mobile_number",
+  "telephone_number",
+  "email",
+  "personal_details_section",
+  "date_of_birth",
+  "age",
+  "gender",
+  "marital_status",
+  "socio_economic_background_section",
+  "classification",
+  "employment",
+  "education",
+  "number_of_family_members_in_the_same_house",
+  "primary_language",
+  "section_break_26",
+  "pan_no",
+  "aadhar_no",
+  "caregiver_details_section",
+  "caregiver_1",
+  "connection_to_patient",
+  "first_name1",
+  "middle_name1",
+  "sur_name1",
+  "address1",
+  "same_as_address",
+  "pin_code1",
+  "same_as_pin_code1",
+  "locality1",
+  "same_as_locality1",
+  "mobile_number1",
+  "same_as_mobil",
+  "telephone_number1",
+  "same_as_tele",
+  "email1",
+  "caregiver_two",
+  "connection_to_patient1",
+  "fst_name2",
+  "mdl_name2",
+  "srname2",
+  "adrs2",
+  "same_as_addr1",
+  "pin_code2",
+  "same_as_pin_code2",
+  "locality2",
+  "same_as_locality2",
+  "mobile_no2",
+  "same_as_mob1",
+  "same_as_caregiver_ones_mobile_number",
+  "telephone_no2",
+  "same_as_tele1",
+  "emal2",
+  "decesion",
+  "con",
+  "first_name7",
+  "middle7",
+  "su7",
+  "ad7",
+  "same_as_addrss2",
+  "pin_code3",
+  "same_as_pin_code3",
+  "locality7",
+  "same_as_locality7",
+  "mb7",
+  "same_as_mobil2",
+  "same_as_c_mobil2",
+  "tn7",
+  "same_as_telephn2",
+  "email7",
+  "referred_by_section",
+  "first_name2",
+  "middle_name2",
+  "sur_name2",
+  "address2",
+  "pin_code4",
+  "mobile_number2",
+  "telephone_number2",
+  "email2",
+  "type_of_referral",
+  "genaral_physician_detail_section",
+  "first_name3",
+  "middle_name3",
+  "sur_name3",
+  "address3",
+  "pin_code5",
+  "mobile_number3",
+  "telephone_number3",
+  "email3",
+  "treating_onco_specialist_details_section",
+  "first_name4",
+  "middle_name4",
+  "sur_name4",
+  "address4",
+  "pin_code6",
+  "mobile_number4",
+  "telephone_number4",
+  "email4",
+  "tsd",
+  "first_name6",
+  "mid6",
+  "sur6",
+  "ad6",
+  "pin_code7",
+  "mb6",
+  "tn6",
+  "email6",
+  "is_the_patient_eligible_for_palcare_care_section",
+  "the_patient_has_a_chronic_debilitating_disease",
+  "the_home_is_the_preferred_place_of_care",
+  "the_home_environment_is_appropriate_and_safe_for_patient",
+  "the_home_environment_is_appropriate_and_safe_for_palcare_staff",
+  "an_identified_primary_care_person_is_available_to_provide_care",
+  "agreeable",
+  "consent_form_section",
+  "upload_consent_form",
+  "section_break_105",
+  "enrolment_month"
+ ],
+ "fields": [
+  {
+   "fieldname": "photo_of_patient",
+   "fieldtype": "Attach Image",
+   "label": "Photo of patient"
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "sur_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Surname",
+   "options": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "enrolment_number",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Enrolment number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_of_enrolment",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Enrolment",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Patient Contact Details"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "telephone_number",
+   "fieldtype": "Data",
+   "label": "Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "personal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nFemale\nMale\nTransgender"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nMarried\nUnmarried\nSingle\nDivorced\nWidow\nWidower"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "socio_economic_background_section",
+   "fieldtype": "Section Break",
+   "label": "Socio Economic Background"
+  },
+  {
+   "fieldname": "number_of_family_members_in_the_same_house",
+   "fieldtype": "Data",
+   "label": "Number of family members in the same house"
+  },
+  {
+   "fieldname": "primary_language",
+   "fieldtype": "Data",
+   "label": "Primary Language"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break",
+   "label": "Identity Proof"
+  },
+  {
+   "fieldname": "pan_no",
+   "fieldtype": "Data",
+   "label": "PAN No."
+  },
+  {
+   "fieldname": "aadhar_no",
+   "fieldtype": "Data",
+   "label": "Aadhar No."
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "caregiver_details_section",
+   "fieldtype": "Section Break",
+   "label": "Caregiver Details"
+  },
+  {
+   "fieldname": "connection_to_patient",
+   "fieldtype": "Data",
+   "label": "Connection To Patient"
+  },
+  {
+   "fieldname": "first_name1",
+   "fieldtype": "Data",
+   "label": "Caregiver One First Name",
+   "options": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "sur_name1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "address1",
+   "fieldtype": "Small Text",
+   "label": "Caregiver One Address"
+  },
+  {
+   "fieldname": "mobile_number1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Mobile Number",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "telephone_number1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Email",
+   "options": "Email"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "referred_by_section",
+   "fieldtype": "Section Break",
+   "label": "Referred By"
+  },
+  {
+   "fieldname": "first_name2",
+   "fieldtype": "Data",
+   "label": "Referred By's First Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "middle_name2",
+   "fieldtype": "Data",
+   "label": "Referred By's Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "sur_name2",
+   "fieldtype": "Data",
+   "label": "Referred By's Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "address2",
+   "fieldtype": "Small Text",
+   "label": "Referred By's Address"
+  },
+  {
+   "fieldname": "mobile_number2",
+   "fieldtype": "Data",
+   "label": "Referred By's Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "telephone_number2",
+   "fieldtype": "Data",
+   "label": "Referred By's Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email2",
+   "fieldtype": "Data",
+   "label": "Referred By's Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "type_of_referral",
+   "fieldtype": "Select",
+   "label": "Type of Referral",
+   "options": "\nTMC\nHospital\nDoctor\nOnco specialist\nOther specialist\nPatient/Family\nSocial Media (website / Google ads / Just Dial)\nOthers"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "genaral_physician_detail_section",
+   "fieldtype": "Section Break",
+   "label": "General Physician\u2019s Details"
+  },
+  {
+   "fieldname": "first_name3",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s First Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "middle_name3",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "sur_name3",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "address3",
+   "fieldtype": "Text",
+   "label": "General Physician\u2019s Address"
+  },
+  {
+   "fieldname": "mobile_number3",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "telephone_number3",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email3",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s Email",
+   "options": "Email"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "treating_onco_specialist_details_section",
+   "fieldtype": "Section Break",
+   "label": "Treating Onco Specialist Details"
+  },
+  {
+   "fieldname": "first_name4",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's First Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "middle_name4",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "sur_name4",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "address4",
+   "fieldtype": "Text",
+   "label": "Treating Onco Specialist's Address"
+  },
+  {
+   "fieldname": "mobile_number4",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "telephone_number4",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email4",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's Email",
+   "options": "Email"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "is_the_patient_eligible_for_palcare_care_section",
+   "fieldtype": "Section Break",
+   "label": "Is the patient eligible for PALCARE care?"
+  },
+  {
+   "default": "0",
+   "fieldname": "the_patient_has_a_chronic_debilitating_disease",
+   "fieldtype": "Check",
+   "label": "The patient has a chronic, debilitating disease"
+  },
+  {
+   "default": "0",
+   "fieldname": "the_home_is_the_preferred_place_of_care",
+   "fieldtype": "Check",
+   "label": "The home is the preferred place of care"
+  },
+  {
+   "default": "0",
+   "fieldname": "the_home_environment_is_appropriate_and_safe_for_patient",
+   "fieldtype": "Check",
+   "label": "The home environment is appropriate and safe for patient"
+  },
+  {
+   "default": "0",
+   "fieldname": "the_home_environment_is_appropriate_and_safe_for_palcare_staff",
+   "fieldtype": "Check",
+   "label": "The home environment is appropriate and safe for PALCARE staff"
+  },
+  {
+   "default": "0",
+   "fieldname": "an_identified_primary_care_person_is_available_to_provide_care",
+   "fieldtype": "Check",
+   "label": "An identified primary care person is available to provide care"
+  },
+  {
+   "default": "0",
+   "fieldname": "agreeable",
+   "fieldtype": "Check",
+   "label": "Patient and family are agreeable to the principals of palliative care"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "consent_form_section",
+   "fieldtype": "Section Break",
+   "label": "Consent Form"
+  },
+  {
+   "fieldname": "upload_consent_form",
+   "fieldtype": "Attach",
+   "label": "Upload Consent Form"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "general_details",
+   "fieldtype": "Section Break",
+   "label": "General details"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nHigh\nMedium\nLow\nDemised\nDischarged\nDropped Out"
+  },
+  {
+   "fieldname": "zone",
+   "fieldtype": "Select",
+   "label": "Zone",
+   "options": "\nZone 1 - South Mumbai\nZone 2 - Central Mumbai\nZone 3 - West Mumbai - South\nZone 4 - West Mumbai - North\nZone 5 - East Mumbai\nZone 6 - Mainland",
+   "reqd": 1
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Image",
+   "hidden": 1,
+   "label": "Photo",
+   "options": "photo_of_patient"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "First Name",
+   "options": "Name",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "decesion",
+   "fieldtype": "Section Break",
+   "label": "Decision Maker\u2019s Details"
+  },
+  {
+   "fieldname": "con",
+   "fieldtype": "Data",
+   "label": "Connection to patient"
+  },
+  {
+   "fieldname": "first_name7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s First Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "middle7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "su7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "ad7",
+   "fieldtype": "Text",
+   "label": "Decision Maker\u2019s Address"
+  },
+  {
+   "fieldname": "mb7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "tn7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Email",
+   "options": "Email"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "tsd",
+   "fieldtype": "Section Break",
+   "label": "Treating Specialist\u2019s Details"
+  },
+  {
+   "fieldname": "first_name6",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s First Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "mid6",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "sur6",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "ad6",
+   "fieldtype": "Text",
+   "label": "Treating Specialist\u2019s Address"
+  },
+  {
+   "fieldname": "mb6",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "tn6",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email6",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "locality",
+   "fieldtype": "Data",
+   "label": "Locality"
+  },
+  {
+   "fieldname": "caregiver_1",
+   "fieldtype": "Heading",
+   "label": "Caregiver One"
+  },
+  {
+   "fieldname": "locality1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Locality"
+  },
+  {
+   "fieldname": "caregiver_two",
+   "fieldtype": "Heading",
+   "label": "Caregiver Two"
+  },
+  {
+   "fieldname": "fst_name2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two First Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "mdl_name2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Middle Name",
+   "options": "Name"
+  },
+  {
+   "fieldname": "srname2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Surname",
+   "options": "Name"
+  },
+  {
+   "fieldname": "adrs2",
+   "fieldtype": "Small Text",
+   "label": "Caregiver Two Address"
+  },
+  {
+   "fieldname": "locality2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Locality"
+  },
+  {
+   "fieldname": "mobile_no2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "telephone_no2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Telephone Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "emal2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "locality7",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Locality"
+  },
+  {
+   "fieldname": "connection_to_patient1",
+   "fieldtype": "Data",
+   "label": "Connection To Patient"
+  },
+  {
+   "fieldname": "enrolment_month",
+   "fieldtype": "Read Only",
+   "label": "Enrolment Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_105",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "salutation",
+   "fieldtype": "Select",
+   "label": "Salutation ",
+   "options": "\nMr.\nMrs.\nMiss.\nSmt.\nMaster.\nDr.\nSr.\nBr.\nFr.\nPr."
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "label": "Classification",
+   "options": "\nUpper\nUpper Middle\nMiddle\nLower Middle\nLower\nBelow Poverty Line\nDestitute"
+  },
+  {
+   "fieldname": "employment",
+   "fieldtype": "Select",
+   "label": "Employment",
+   "options": "\nEmployed\nUnemployed"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Select",
+   "label": "Education",
+   "options": "\nLiterate\nIlliterate"
+  },
+  {
+   "fieldname": "patient_form_draft",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Patient Form Draft",
+   "options": "Patient Form Draft"
+  },
+  {
+   "fieldname": "pin_code1",
+   "fieldtype": "Data",
+   "label": "Caregiver One Pincode",
+   "length": 6
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_tele",
+   "fieldtype": "Check",
+   "label": "Same as Patient Telephone Number"
+  },
+  {
+   "fieldname": "pin_code2",
+   "fieldtype": "Data",
+   "label": "Caregiver Two Pincode",
+   "length": 6
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_mob1",
+   "fieldtype": "Check",
+   "label": "Same as Patient Mobile Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_tele1",
+   "fieldtype": "Check",
+   "label": "Same as Patient Telephone Number"
+  },
+  {
+   "fieldname": "pin_code3",
+   "fieldtype": "Data",
+   "label": "Decision Maker\u2019s Pincode",
+   "length": 6
+  },
+  {
+   "fieldname": "pin_code4",
+   "fieldtype": "Data",
+   "label": "Referred By's Pincode",
+   "length": 6
+  },
+  {
+   "fieldname": "pin_code5",
+   "fieldtype": "Data",
+   "label": "General Physician\u2019s Pincode",
+   "length": 6
+  },
+  {
+   "fieldname": "pin_code6",
+   "fieldtype": "Data",
+   "label": "Treating Onco Specialist's Pincode",
+   "length": 6
+  },
+  {
+   "fieldname": "pin_code7",
+   "fieldtype": "Data",
+   "label": "Treating Specialist\u2019s Pincode",
+   "length": 6
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_mobil",
+   "fieldtype": "Check",
+   "label": "Same as Patient Mobile Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_address",
+   "fieldtype": "Check",
+   "label": "Same as Patient Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_addrss2",
+   "fieldtype": "Check",
+   "label": "Same as Patient Address"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_mobil2",
+   "fieldtype": "Check",
+   "label": "Same as Patient Mobile Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_telephn2",
+   "fieldtype": "Check",
+   "label": "Same as Patient Telephone Number"
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "Id"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_addr1",
+   "fieldtype": "Check",
+   "label": "Same as Patient Address"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Pincode",
+   "length": 6
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_caregiver_ones_mobile_number",
+   "fieldtype": "Check",
+   "label": "Same as Caregiver One's Mobile Number"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_c_mobil2",
+   "fieldtype": "Check",
+   "label": "Same as Caregiver One's Mobile Number"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Full Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_pin_code1",
+   "fieldtype": "Check",
+   "label": "Same as Patient Pincode"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_locality1",
+   "fieldtype": "Check",
+   "label": "Same as Patient Locality"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_pin_code2",
+   "fieldtype": "Check",
+   "label": "Same as Patient Pincode"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_locality2",
+   "fieldtype": "Check",
+   "label": "Same as Patient Locality"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_pin_code3",
+   "fieldtype": "Check",
+   "label": "Same as Patient Pincode"
+  },
+  {
+   "default": "0",
+   "fieldname": "same_as_locality7",
+   "fieldtype": "Check",
+   "label": "Same as Patient Locality"
+  }
+ ],
+ "image_field": "photo_of_patient",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-17 14:43:07.033499",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Patient",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "first_name,date_of_birth,middle_name,sur_name",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "full_name",
+ "track_changes": 1
+}

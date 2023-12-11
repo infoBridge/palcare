@@ -1,0 +1,696 @@
+<style>
+    .form-control {
+        width: 60%;
+    }
+
+    .panel {
+        padding-bottom: 10px;
+    }
+
+    #cam {
+        border: 1px;
+        border-color: black;
+        border-style: solid;
+        width: 50%;
+    }
+
+    #photo {
+        border: 1px;
+        border-color: black;
+        border-style: dashed;
+        width: 50%;
+    }
+
+    .accordion-wrapper {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .accordion+.title {
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        background: #395F6F;
+
+        border-radius: 4px;
+    }
+
+    .accordion~.title strong {
+        line-height: 24px;
+        color: white;
+    }
+
+    .accordion~.title .side-icon {
+        display: block;
+    }
+
+    .accordion:checked~.title .side-icon {
+        display: none;
+    }
+
+    .accordion~.title .down-icon {
+        display: none;
+    }
+
+    .accordion:checked~.title .down-icon {
+        display: block;
+    }
+
+    .accordion~.content {
+        display: none;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .accordion:checked~.content {
+        display: block;
+    }
+
+    .form-control1 {
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        background-image: none;
+        border: 1px solid #F4F5F6;
+        border-radius: 4px;
+    }
+
+    /* .form-control2 {
+width: 60%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+background-image: none;
+border: 1px solid #F4F5F6;
+border-radius: 4px;
+} */
+</style>
+
+<form id="whentheyseeus">
+    <datalist id="patientid">
+        <option value="">
+    </datalist>
+    <datalist id="allergens">
+        <option value="">
+    </datalist>
+    <datalist id="comorbidiities">
+        <option value="">
+    </datalist>
+    <label style="font-size:larger ;"><b>New Medical Details
+        </b></label>
+    <input type="button" class="btn btn-primary float-right border border-2 border-success"
+        style="right:10%; z-index:9;background-color: #395F6F;color: white;" id="patient_medical_submit" value="Save">
+    <div class="form-row">
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <br>
+            <div class="form-check col-md-12" style="padding-left: 5.5%;">
+                <input class="form-check-input border " type="checkbox" id="npatient" onclick="myFunctionPatient()">
+                <label class="form-check-label" for="gridCheck">New Patient</label>
+            </div>
+            <div class="form-check col-md-12" style="padding-left: 5.5%;">
+                <input class="form-check-input" type="checkbox" id="epatient" onclick="myFunctionPatient()">
+                <label class="form-check-label" for="gridCheck">Existing Patient</label>
+            </div>
+            <br>
+            <div class="form-group col-md-12" style="padding-left: 4%;" id="pdisplay">
+                <label for="inputEmail4">Patient <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="patient" placeholder="" list="patientid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 4%;" id="fdisplay">
+                <label for="inputEmail4">First Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="first_name" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 4%;" id="sdisplay">
+                <label for="inputEmail4">Surname <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="surname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 4%;" id="nameP">
+                <label for="inputPassword4">Patient Name </label>
+                <input type="text" readonly class="form-control" id="patientname" placeholder="">
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <br>
+            <label style="font-size:larger ;padding-left: 4%;"><b>Medical Details</b></label>
+            <div class="form-group col-md-12" style="padding-left: 4%;">
+
+                <div class="form-check col-md-12">
+                    <input class="form-check-input" type="checkbox" id="noncancer" onclick="myFunction()">
+                    <label class="form-check-label" for="gridCheck">Non Cancer</label>
+                </div>
+                <div class="form-check col-md-12">
+                    <input class="form-check-input" type="checkbox" id="cancer" onclick="myFunction()">
+                    <label class="form-check-label" for="gridCheck">Cancer</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <div class="form-group col-md-12" id="can_data" style="display:none"><br>
+                <label style="font-size:larger ;padding-left: 3%;"><b>Cancer</b></label>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Type Of Cancer / Primary Site</label>
+                    <input type="text" class="form-control" id="type_cancer" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Secondary Site</label>
+                    <input type="text" class="form-control" id="s_site" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Diagnosed Year</label>
+                    <input type="date" class="form-control" id="d_year" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Diagnosed By</label>
+                    <input type="text" class="form-control" id="d_by" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Recovered Year</label>
+                    <input type="text" class="form-control" id="r_year" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Re occured Year</label>
+                    <input type="text" class="form-control" id="re_year" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="inputState">Stage</label><br>
+                    <select id="stage1" class="form-control1">
+                        <option selected></option>
+                        <option>I</option>
+                        <option>II</option>
+                        <option>III</option>
+                        <option>IV</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="inputState">Prognosis</label><br>
+                    <select id="prognosis" class="form-control1">
+                        <option selected></option>
+                        <option>Curable</option>
+                        <option>Long Life Span</option>
+                        <option>Medium Life span</option>
+                        <option>Poor</option>
+                        <option>Very Poor</option>
+                        <option>Can’t say</option>
+                    </select>
+                    
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Chemotherapy</label>
+                    <textarea class="form-control" id="chemotherapy_type" placeholder=""></textarea>
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Radiation Type</label>
+                    <textarea class="form-control" id="radiation_type" placeholder=""></textarea>
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Surgery</label>
+                    <textarea class="form-control" id="Surgery" placeholder=""></textarea>
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Immunotherapy</label>
+                    <textarea class="form-control" id="immunotherapy_type" placeholder=""></textarea>
+                </div>
+            </div>
+            <div class="form-group col-md-12" id="non_data" style="display:none"><br><label
+                    style="font-size:larger ;padding-left: 3%;"><b>Non Cancer</b></label>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Type of Non Cancer</label>
+                    <input type="text" class="form-control" id="type_of_non_cancer" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Diagnosed Year</label>
+                    <input type="date" class="form-control" id="diag_year" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="">Diagnosed From</label>
+                    <input type="text" class="form-control" id="diag_from" placeholder="">
+                </div>
+                <div class="form-group col-md-12" style="padding-left: 3%;">
+                    <label for="inputState">Prognosis</label><br>
+                    <select id="prognosis1" class="form-control1">
+                        <option selected></option>
+                        <option>Curable</option>
+                        <option>Long Life Span</option>
+                        <option>Medium Life span</option>
+                        <option>Poor</option>
+                        <option>Very Poor</option>
+                        <option>Can’t say</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+                <input type="checkbox" class="accordion" hidden />
+                <div class="title" style="background: none;">
+                    <label style="font-weight: bold;font-size: larger;margin-left: 4%;">For Both</label>
+                    <div style="margin-right: 87%;margin-top: -.5%;">
+                        <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                            <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                        <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                            <path
+                                d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Is on active treatment</label><br>
+                        <select id="active_treatment" class="form-control1">
+                            <option selected></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Alternative Therapies</label><br>
+                        <select id="alternative_therapies" class="form-control1">
+                            <option selected></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Type of Alternative Therapy</label><br>
+                        <select id="type_of_therapy1" class="form-control1">
+                            <option selected></option>
+                            <option>Hoemopathy</option>
+                            <option>Sidha</option>
+                            <option>Unani</option>
+                            <option>Naturopathy</option>
+                            <option>Accupuncture</option>
+                            <option>Tens</option>
+                            <option>Other Alternative Therapies</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="">Comorbidiities</label>
+                        <input type="text" class="form-control" id="comorbidiities" placeholder="" list="comorbidiities">
+                    </div>
+                    <!-- <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Comorbidiities</label><br>
+                        <select id="comorbidiities" class="form-control1">
+                            <option selected></option>
+                            <option>AIDS</option>
+                            <option>Bronchial Asthma</option>
+                            <option>Cardiac Arrhythmias</option>
+                            <option>CerebroVascular Disease</option>
+                            <option>Chronic Liver Disease</option>
+                            <option>Chronic Pulmonary Disease</option>
+                            <option>Chronic Renal Failure</option>
+                            <option>Coagulopathy</option>
+                            <option>Congestive Heart Failure</option>
+                            <option>Diabetes Mellitus</option>
+                            <option>Dyslipidemia</option>
+                            <option>G-6-PD deficiency</option>
+                            <option>Hypertension</option>
+                            <option>Hypothyroidism</option>
+                            <option>Peptic Ulcer Disease</option>
+                            <option>Peripheral Vascular Disease</option>
+                            <option>Psychiatric Disorders</option>
+                            <option>Rheumatoid Arthritis</option>
+                            <option>Valvular Disease</option>
+                            <option>Venous Stasis Disease</option>
+                            <option>Others</option>
+                        </select>
+                    </div> -->
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="">Allergens</label>
+                        <input type="text" class="form-control" id="allergens" placeholder="" list="allergens">
+                    </div>
+                    <!-- <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Allergens</label><br>
+                        <select id="allergens" class="form-control1">
+                            <option selected></option>
+                            <option>Pencillins</option>
+                            <option>Tetracyclines</option>
+                            <option>Cephalosporins</option>
+                            <option>Sulfa medications</option>
+                            <option>Chemotherapy medications</option>
+                            <option>HIV medications</option>
+                            <option>Anti-epileptic medications</option>
+                            <option>Muscle Relaxants</option>
+                            <option>G-6-PD deficiency</option>
+                            <option>Others</option>
+                        </select>
+                    </div> -->
+                    <label style="font-size:larger ;padding-left: 4%;"><b>Patient is aware of her/his
+                            condition</b></label>
+
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Diagnosis</label><br>
+                        <select id="diagnosis1" class="form-control1">
+                            <option selected></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Prognosis</label><br>
+                        <select id="prognosis2" class="form-control1">
+                            <option selected></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Revealed by</label><br>
+                        <select id="revealed_by" class="form-control1">
+                            <option selected></option>
+                            <option>Doctor</option>
+                            <option>Family</option>
+                            <option>Self Guess</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    <label style="font-size:larger ;padding-left: 4%;"><b>Family is aware into patient
+                            condition</b></label>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Diagnosis</label><br>
+                        <select id="diagnosis2" class="form-control1">
+                            <option selected></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Prognosis</label><br>
+                        <select id="prognosis3" class="form-control1">
+                            <option selected></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12" style="padding-left: 4%;">
+                        <label for="inputState">Revealed by</label><br>
+                        <select id="revealed_by1" class="form-control1">
+                            <option selected></option>
+                            <option>Doctor</option>
+                            <option>Family</option>
+                            <option>Self Guess</option>
+                        </select>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <br>
+
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+                <input type="checkbox" class="accordion" hidden />
+                <div class="title" style="background: none;">
+                    <label style="font-weight: bold;font-size: larger;margin-left: 4%;">Pain History</label>
+                    <div style="margin-right: 83%;margin-top: -.5%;">
+                        <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                            <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                        <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                            <path
+                                d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content" style="margin-left: 4.5%;">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Site</label>
+                            <input type="text" class="form-control" id="site1" placeholder="">
+
+
+                            <label for="inputState">Intensity Score</label><br>
+                            <select id="i_score" class="form-control1">
+                                <option selected></option>
+                                <option>Bearable</option>
+                                <option>Unbearable</option>
+                                <option>Mild</option>
+                                <option>Mod</option>
+                                <option>Severe</option>
+                                <option>Others</option>
+                            </select>
+                            <br>
+                            <label for="inputState">Type</label>
+                            <input type="text" class="form-control" id="type1" placeholder="">
+                            <label for="inputState">Frequency</label>
+                            <input type="text" class="form-control" id="frequency" placeholder="">
+                            <label for="inputState">Aggravator</label>
+                            <input type="text" class="form-control" id="aggravator" placeholder="">
+                            <label for="inputState">Reliever</label>
+                            <input type="text" class="form-control" id="reliever" placeholder="">
+                            <label for="inputState">Impact of pain on quality of life</label>
+                            <input type="text" class="form-control" id="impact_of" placeholder="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Treatment history (analgesics only)</label>
+                            <textarea type="text" class="form-control" id="treatment1" placeholder=""></textarea>
+
+
+                            <label for="inputState">Response to pain medications</label>
+                            <textarea type="text" class="form-control" id="response1" placeholder=""></textarea>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Others</label>
+                            <textarea type="text" class="form-control" id="p_others" placeholder=""></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+            </label>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+                <input type="checkbox" class="accordion" hidden />
+                <div class="title" style="background: none;">
+                    <label style="font-weight: bold;font-size: larger;margin-left: 4%;">General Examination</label>
+                    <div style="margin-right: 76%;margin-top: -.5%;">
+                        <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                            <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                        <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                            <path
+                                d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content" style="margin-left: 4.5%;">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Height</label>
+                            <input type="text" class="form-control" id="height1" placeholder="">
+                            <label for="inputState">Weight</label>
+                            <input type="text" class="form-control" id="weight1" placeholder="">
+                            <label for="inputState">Blood Pressure</label>
+                            <input type="text" class="form-control" id="blood_pressure" placeholder="">
+                            <label for="inputState">Pulse</label>
+                            <input type="text" class="form-control" id="pulse" placeholder="">
+                            <label for="inputState">Temperature</label>
+                            <input type="text" class="form-control" id="temperature1" placeholder="">
+                            <label for="inputState">SpO2</label>
+                            <input type="text" class="form-control" id="spo2" placeholder="">
+                            <label for="inputState">Pallor</label>
+                            <input type="text" class="form-control" id="pallor" placeholder="">
+                            <label for="inputState">Icterus</label>
+                            <input type="text" class="form-control" id="icterus" placeholder="">
+                            <label for="inputState">Clubbing</label>
+                            <input type="text" class="form-control" id="clubbing" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Lymphadenopathy</label>
+                            <input type="text" class="form-control" id="lymphadenopathy" placeholder="">
+                            <label for="inputState">Oedema</label>
+                            <input type="text" class="form-control" id="oedema" placeholder="">
+                            <label for="inputState">Ambulation</label>
+                            <input type="text" class="form-control" id="ambulation" placeholder="">
+                            <label for="inputState">Cyanosis</label>
+                            <input type="text" class="form-control" id="cyanosis" placeholder="">
+                            <label for="inputState">Oral Examination</label>
+                            <input type="text" class="form-control" id="oral_examination" placeholder="">
+                            <label for="inputState">PR</label>
+                            <input type="text" class="form-control" id="pr" placeholder="">
+                            <label for="inputState">RR</label>
+                            <input type="text" class="form-control" id="rr" placeholder="">
+                            <label for="inputState">General Appearance</label>
+                            <input type="text" class="form-control" id="general_appearance" placeholder="">
+                            <label for="inputState">Level of Consciousness</label>
+                            <input type="text" class="form-control" id="level_of_consciousness" placeholder="">
+                            <label for="inputState">Alerts</label><br>
+                            <select id="alerts" class="form-control1">
+                                <option selected></option>
+                                <option>Co Morbidities</option>
+                                <option>Allergies</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+                <input type="checkbox" class="accordion" hidden />
+                <div class="title" style="background: none;">
+                    <label style="font-weight: bold;font-size: larger;margin-left: 4.5%;">History Of Illness</label>
+                    <div style="margin-right: 79%;margin-top: -.5%;">
+                        <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                            <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                        <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                            <path
+                                d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content" style="margin-left: 4.5%;">
+                    <p style="font-size:15px;">History Of Illness</p>
+                    <textarea type="text" class="form-control" id="history_of_illness" placeholder=""
+                        style="width: 90%;"></textarea>
+                </div>
+            </label>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+                <input type="checkbox" class="accordion" hidden />
+                <div class="title" style="background: none;">
+                    <label style="font-weight: bold;font-size: larger;margin-left: 4.5%;">Systematic and Local
+                        Examination</label>
+                    <div style="margin-right: 64%;margin-top: -.5%;">
+                        <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                            <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                        <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                            <path
+                                d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content" style="margin-left: 4.5%;">
+                    <p style="font-size:15px;">Systematic and Local Examination</p>
+                    <textarea type="text" class="form-control" id="systematic_and_local_examination" placeholder=""
+                        style="width: 90%;"></textarea>
+                </div>
+            </label>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+                <input type="checkbox" class="accordion" hidden />
+                <div class="title" style="background: none;">
+                    <label style="font-weight: bold;font-size: larger;margin-left: 4.5%;">Additional Doctors Notes On
+                        Enrollment</label>
+                    <div style="margin-right: 60%;margin-top: -.5%;">
+                        <svg viewBox="0 0 256 512" width="10" y="50%" title="angle-left" class="side-icon">
+                            <path
+                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                        </svg>
+                        <svg viewBox="0 0 320 512" height="19" y="50%" title="angle-down" class="down-icon">
+                            <path
+                                d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="content" style="margin-left: 4.5%;">
+                    <p style="font-size:15px;">Additional Doctors Notes On Enrollment</p>
+                    <textarea type="text" class="form-control" id="additional_doctors_notes" placeholder=""
+                        style="width: 90%;"></textarea>
+                </div>
+            </label>
+        </div>
+    </div>
+</form>
+<br>
+<div>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+        <div class="title" style="background: none;">
+            <label
+                style="font-weight: bold;font-size: larger;margin-left: 4.5%;margin-top: 1.5%;margin-bottom: 1.5%;">Pain
+                Assessment</label>
+        </div>
+        <button type="button" class="btn btn-default btn-sm btn-attach" data-fieldtype="Attach Image"
+            data-fieldname="photo_of_patient" placeholder="" data-doctype="Patient" data-toggle="modal"
+            id='patient-photo' style="margin-left: 4.5%;">
+            Attach
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="panel">
+                        <div class="modal-header">
+                            <button id="switchFrontBtn" class="btn btn-default btn-sm" style="margin-left: 1%;">Front
+                                Camera</button>
+                            <button id="switchBackBtn" class="btn btn-default btn-sm" style="margin-left: 5%;">Back
+                                Camera</button>
+                            <button id="snapBtn" class="btn btn-default btn-sm" style="margin-left: 5%;">Snap</button>
+                            <button type="button" onclick="vidOff()" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div style="width:100%;">
+                                <center>
+                                    <!-- add autoplay muted playsinline for iOS -->
+                                    <video id="cam" autoplay muted playsinline>Not available</video>
+                                    <canvas id="canvas" style="display:none ;"></canvas>
+                                    <img id="photo" alt="The screen capture will appear in this box.">
+                                </center>
+                            </div>
+                            <br><br>
+                            <div class="modal-footer">
+                                <br><br>
+                                <button type="button" class="btn btn-primary" id="save_img">Save</button>
+                                <br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <img id="img_data1" class="d-none" style="width: 15%;margin-top: -10;margin-bottom: 2%; margin-left: 4.5%;"
+            alt="The screen capture will appear in this box." src="">
+    </div><br>
+    <div style="width: 93.5%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+        <div class="title" style="background: none;">
+            <label
+                style="font-weight: bold;font-size: larger;margin-left: 4%;margin-top: 1.5%;margin-bottom: 1.5%;">Genogram</label>
+        </div>
+        <button type="button" class="btn btn-default btn-sm btn-attach" id="constent-img" placeholder=""
+            data-doctype="Patient" style="margin-left: 4.5%;">
+            Attach
+        </button>
+        <br><br>
+        <img id="img_data" style="width: 15%; margin-left: 4.5%;margin-bottom: 2%;" class="d-none"
+            alt="The screen capture will appear in this box." src="">
+
+    </div>
+    <br>
+</div>

@@ -1,0 +1,352 @@
+<style>
+    .Type_of_Condition {
+        color: #395F6F;
+        position: relative;
+        margin-top: -5%;
+        float: right;
+        font-size: x-large;
+        font-family: Inter;
+        font-style: normal;
+    }
+
+    .zone {
+        color: #395F6F;
+        position: relative;
+        margin-top: -5%;
+        float: right;
+        font-size: x-large;
+        font-family: Inter;
+        font-style: normal;
+    }
+
+    .age {
+        color: #395F6F;
+        position: relative;
+        margin-top: -5%;
+        float: right;
+        font-size: x-large;
+        font-family: Inter;
+        font-style: normal;
+    }
+
+    .Gender {
+        color: #395F6F;
+        position: relative;
+        margin-top: -5%;
+        float: right;
+        font-size: x-large;
+        font-family: Inter;
+        font-style: normal;
+    }
+
+    button:hover,
+    button:focus {
+        outline: none;
+    }
+
+    .imgg {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 8%;
+        height: 100px;
+        /* border-radius: 100%; */
+        }
+</style>
+<div>
+    <p class="patient_name" id="patient-id"
+    style="position: absolute; color: #395F6F;font-style:inter;size:26px;font-size:33px;margin-left: 0%;margin-top: -1%;"></p>
+  
+
+            <div class="image_bio"  style="position:relative; overflow:hidden; padding-bottom:8%; ">
+                <img class="ayman" id="remove_img" style="position:absolute;margin-left:82%;">
+            </div>
+        
+    <div><br><br>
+        <div>
+            <button class="patient-feed-btn"
+                style="color: #395F6F; position: absolute; background: none;border: none;font-size: x-large;margin-left: 0%;margin-top: -3%;">Feed</button>
+            <button class="patient-bio-btn active"
+                style="color: #395F6F; background: none;border: none;font-size: x-large;position: absolute; margin-top:-3%; margin-left: 23%;">Bio</button>
+            <button class="patient-details-btn"
+                style="color: #395F6F; background: none;border: none;font-size: x-large;margin-top:-3%; margin-left: 46%;position: absolute;">Details</button><br>
+            <hr
+                style="margin-left: 20.1%; margin-top: .5%;width: 10%; border-top: 4px solid #395F6F;position: absolute;">
+            <hr
+                style="margin-left: 0%;margin-top: .8%; width: 100%; border-top: 2px solid #395F6F;position: absolute;">
+        </div><br><br>
+        <div class="row">
+
+            <div class="px-2 py-4 d-flex col-5 ">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded">
+                    <p
+                        style="margin-right:-1%;font-size: large;position: relative;margin-top: -3%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Name</p>
+                    <p class="names"
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -3%;">
+                        name</p>
+                </div>
+            </div>
+
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -3%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Contact Number</p>
+                    <p class="contact_number"
+                        style="color: #395F6F;position: relative;margin-top: -3%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        contact_number</p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -3%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -3%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Enrolment No</p>
+                    <p class="Entrollment_No"
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Entrollment_No</p>
+                </div>
+            </div>
+
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -5%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Marital Status</p>
+                    <p class="Marital_status"
+                        style="color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Marital Status</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -5%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Enrolment Date</p>
+                    <p class="Entrollment_Date"
+                        style="color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Entrollment_Date</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -5%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Primary Language</p>
+                    <p class="Primary_Language"
+                        style="color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Primary_Language</p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="text-align: right;font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Zone</p>
+                    <p class="zone"
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Zone</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -5%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Diagnosis</p>
+                    <p class="Diagnosis"
+                        style="color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                    </p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Gender</p>
+                    <p class="Gender"
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Gender</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -5%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Referred By</p>
+                    <p class="Referred_by"
+                        style="color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Referred_by</p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Age</p>
+                    <p class="age"
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        age</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -5%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        GPs Name</p>
+                    <p class="GPs_Name"
+                        style="color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        GPs_Name</p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -10%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Contact Number</p><br>
+                    <p class="Contact_Number2"
+                        style="color: #395F6F;position: relative;margin-top: -10%; float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Contact_Number2</p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Patient Address </p>
+                    <p class="address"
+                        style="text-align: right; color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        address</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -20%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <hr style="width: 100%; border-top: 2px solid gray;margin-top: -5%;">
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -25%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Treat Specialist</p><br>
+                    <p class="Treat_Specialist"
+                        style="color: #395F6F;position: relative;margin-top: -25%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Treat Specialist</p>
+
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        Caregiver Name</p>
+                    <p class="caregiver_name"
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                        caregiver_name</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size:large;position: relative;margin-left: -0.2%;margin-top: -35%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Oncologist Name</p><br>
+                    <p class="Oncologist_Name"
+                        style="color: #395F6F;position: relative;margin-top: -35%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        Oncologist_Name</p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3 ">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;color: #8A8A8A;font-family: Inter;font-style: normal;margin-top: -7%;">
+                    </p>
+                    <p
+                        style="color: #395F6F;position: relative;float: right;font-size: large;font-family: Inter;font-style: normal;margin-top: -7%;">
+                    </p>
+                </div>
+            </div>
+            <div class="px-2 py-4 d-flex col-5 offset-1">
+                <div class="w-100 d-flex align-items-center justify-content-between px-3">
+                    <p
+                        style="font-size: large;position: relative;margin-left: -0.2%;margin-top: -40%;color: #8A8A8A;font-family: Inter;font-style: normal;">
+                        Contact Number</p>
+                    <p class="Contact_Number3"
+                        style="color: #395F6F;position: relative;margin-top: -40%;float: right;font-size: large;font-family: Inter;font-style: normal;">
+                        contact_number</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>

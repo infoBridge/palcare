@@ -1,0 +1,111 @@
+<style>
+    .accordion-wrapper {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .accordion+.title {
+        user-select: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px;
+        background: #395F6F;
+
+        border-radius: 4px;
+    }
+
+    .accordion~.title strong {
+        line-height: 24px;
+        color: white;
+    }
+
+    .accordion~.title .side-icon {
+        display: block;
+    }
+
+    .accordion:checked~.title .side-icon {
+        display: none;
+    }
+
+    .accordion~.title .down-icon {
+        display: none;
+    }
+
+    .accordion:checked~.title .down-icon {
+        display: block;
+    }
+
+    .accordion~.content {
+        display: none;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .accordion:checked~.content {
+        display: block;
+    }
+    .details_btn{
+        font-size: x-large; background-color: #395F6F;width: 100%;border-radius: 4px;height: 65px;color: white;border: none;
+    }
+    .para{
+        font-size: x-large;position: relative;margin-left:-0.5%;color: #8A8A8A;
+    }
+    .Entrollment_No{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+    .Entrollment_Date{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+    .Type_of_Condition{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+    .Zone{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+    .age{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+    .Gender{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+    .Caregiver_name{
+        color: #395F6F;position: relative;margin-top: -5%;float: right; font-size: x-large;
+    }
+</style>
+<label style="display: block;max-width: 100%;margin: 0 auto;margin-top: 12px;margin-bottom: 12px;">
+    <input type="checkbox" class="accordion" hidden />
+    
+        <div class="title" style="background: none;">
+            <p class="name1" style="font-size: x-large;color: #395F6F;position: relative;margin-left:-2%;">Patient name</p>
+            <svg viewBox="0 0 256 512" width="12" title="angle-right" class="side-icon" fill="#335858">
+                <path
+                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+            </svg>
+            <svg viewBox="0 0 320 512" height="24" title="angle-down" class="down-icon" fill="#335858">
+                <path
+                    d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+            </svg>
+        </div>
+    
+    <div class="content">
+        <p class="para">Entrollment No</p><br>
+        <p class="Entrollment_No" id="enroll">Entrollment_No</p><br>
+        <p class="para">Entrollment Date</p><br>
+        <p class="Entrollment_Date">Entrollment_Date</p><br>
+        <p class="para">Zone</p><br>
+        <p class="Zone"> Zone</p><br>
+        <p class="para">Gender</p><br>
+        <p class="Gender">Gender</p><br>
+        <p class="para">Age</p><br>
+        <p class="age">age</p><br>
+        <p class="para">Caregiver name</p><br>
+        <p class="Caregiver_name">Caregiver_name</p><br>
+        <button class="details_btn" >Details</button>
+    </div>
+</label>
+<hr style="width: 100%; border-top: 2px solid gray;">

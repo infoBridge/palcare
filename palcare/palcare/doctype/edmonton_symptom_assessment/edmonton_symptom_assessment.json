@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "autoname": "ESAS-.####",
+ "creation": "2022-01-27 15:03:25.460085",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "patient",
+  "date",
+  "pain_score",
+  "dyspnoea",
+  "nausea__vomiting",
+  "appetite",
+  "sleep",
+  "bladder",
+  "bowel",
+  "skin",
+  "oral_assessment1",
+  "pressure_injuries1",
+  "tired",
+  "name_of_palcare_team_member"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pain_score",
+   "fieldtype": "Select",
+   "label": "Pain Score",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nNot Done"
+  },
+  {
+   "fieldname": "dyspnoea",
+   "fieldtype": "Select",
+   "label": "Dyspnoea",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nNot Done"
+  },
+  {
+   "fieldname": "nausea__vomiting",
+   "fieldtype": "Select",
+   "label": "Nausea / Vomiting",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nNot Done"
+  },
+  {
+   "fieldname": "appetite",
+   "fieldtype": "Select",
+   "label": "Appetite",
+   "options": "\nNormal\nPoor\nSoft Diet\nFluid Diet\nClear Fluids\nTube Feed\nNot Eating\nP\nSF"
+  },
+  {
+   "fieldname": "sleep",
+   "fieldtype": "Select",
+   "label": "Sleep",
+   "options": "\nNormal\nDisturbed\nInsominia\nReverse"
+  },
+  {
+   "fieldname": "bladder",
+   "fieldtype": "Select",
+   "label": "Bladder",
+   "options": "\nDiaper\nIDC\nOthers"
+  },
+  {
+   "fieldname": "bowel",
+   "fieldtype": "Select",
+   "label": "Bowel",
+   "options": "\nNormal\nDiarrhoea\nConstipated\nMaleamic\nFresh Blood\nColostomy\nOthers (e.g., BNO)"
+  },
+  {
+   "fieldname": "skin",
+   "fieldtype": "Select",
+   "label": "Skin",
+   "options": "\nMoist\nDry\nFragile\nIntact\nTear\nOthers (e.g., broken skin, Pressure Injuries)"
+  },
+  {
+   "description": "L: Lips, L1: Smooth, Pink & Moist, L2: Dry , L3: Cracked, L4: Ulcerated, L5: Bleeding,T: Tongue, T1: Pink & Moist, T2: Coated\nT3: Dry, T4: Thrush +   - low ++    - moderate +++    - severe,\nMM: Mucous Membrane, M1: Pink & Moist , M2: Reddened,M3: Ulceration, M4:  Thrush +  - low ++  - moderate +++    - severe,\nG: Gums,G1: Pink,G2: Oedematous,G3: Redness,G4: Bleeding, TT: Teeth,TT1: Clean,TT2: Debris,TT3: Dental Caries,TT4: Loose Teeth,TT5: Denture\n",
+   "fieldname": "oral_assessment1",
+   "fieldtype": "Data",
+   "label": "Oral Assessment"
+  },
+  {
+   "description": "S1: Stage 1     S2: Stage 2     S3: Stage 3     S4: Stage 4     S5: Unstageable     S6: Suspected Deep Tissue Injury.\n\nStage 1: \nIntact skin with non-blanchable redness of a localised area usually over a bony prominence.\n\nStage 2: \nPartial thickness loss of dermis presenting as a shallow open ulcer with a red pink wound bed without slough\n\nStage 3: \nFull thickness tissue loss. Subcutaneous fat may be visible but bone, muscle is exposed\n\nStage 4: \nFull thickness loss with exposed bone, tendon or muscle\n\nStage 5: Unstageable:\nFull thickness tissue loss in which actual depth of the ulcer is completely obscured by slough (yellow, tan, grey, green or brown)\n\nStage 6: Suspected Deep Tissue Injury\nPurple or maroon localised area of discoloured intact skin or blood-filled blister due to damage of underlying soft tissue from pressure and/or shear\n\n",
+   "fieldname": "pressure_injuries1",
+   "fieldtype": "Data",
+   "label": "Pressure Injuries"
+  },
+  {
+   "fieldname": "name_of_palcare_team_member",
+   "fieldtype": "Data",
+   "label": "Name of Palcare Team Member"
+  },
+  {
+   "fieldname": "tired",
+   "fieldtype": "Select",
+   "label": "Tired ",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-30 14:56:20.849895",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Edmonton Symptom Assessment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient",
+ "track_changes": 1
+}

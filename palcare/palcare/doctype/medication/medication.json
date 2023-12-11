@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "MEDIC-.####",
+ "creation": "2022-02-16 08:40:03.699352",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "date",
+  "user",
+  "medication_type",
+  "image",
+  "image_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "image_4",
+   "fieldtype": "Image",
+   "options": "image"
+  },
+  {
+   "fieldname": "medication_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Medication Type",
+   "options": "\nMedications on Enrolment\nMedications by PALCARE after Enrolment\nMedication Schedule",
+   "reqd": 1
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-19 17:14:16.135713",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Medication",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient_name"
+}

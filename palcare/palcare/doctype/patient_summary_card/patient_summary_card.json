@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "autoname": "PSC-.#####",
+ "creation": "2022-01-27 15:06:31.290856",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "patient",
+  "summary_card_type",
+  "date",
+  "no_of_days_with_palcare",
+  "palce_of_discharge",
+  "place_of_death",
+  "place_of_bereavement",
+  "user",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User"
+  },
+  {
+   "fieldname": "summary_card_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Summary Card Type",
+   "options": "\nDischarge\nDeath\nBereavement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "depends_on": "eval:doc.summary_card_type=='Death'",
+   "fieldname": "place_of_death",
+   "fieldtype": "Data",
+   "label": "Place of death"
+  },
+  {
+   "depends_on": "eval:doc.summary_card_type=='Bereavement'",
+   "fieldname": "place_of_bereavement",
+   "fieldtype": "Data",
+   "label": "Place of bereavement"
+  },
+  {
+   "depends_on": "eval:doc.summary_card_type=='Discharge'",
+   "fieldname": "palce_of_discharge",
+   "fieldtype": "Data",
+   "label": "Place of discharge"
+  },
+  {
+   "fieldname": "no_of_days_with_palcare",
+   "fieldtype": "Data",
+   "label": "No. of days with palcare"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-29 14:51:10.728280",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Patient Summary Card",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient",
+ "track_changes": 1
+}

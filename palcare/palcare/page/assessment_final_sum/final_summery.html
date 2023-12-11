@@ -1,0 +1,331 @@
+<style>
+  .float {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    bottom: 5%;
+    right: 18.5%;
+    background-color: #395F6F;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+
+  .my-float {
+    margin-top: 16px;
+
+  }
+
+  .custom-select {
+    font-size: 25px;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #395F6F;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    padding: 2px 50px 2px 10px;
+    border: none;
+    background-image: url("https://img.icons8.com/ios-filled/50/FFFFFF/chevron-down.png");
+    background-repeat: no-repeat;
+    background-position: 97%;
+    background-size:20px
+  }
+
+  .card_care::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_care {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_visit::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card_visit {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_strong::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_strong {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_anti::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_anti {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_pain::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_pain {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_nausea::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_nausea {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_dsypnoea::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_dsypnoea {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_ghq::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_ghq {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_family::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_family {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_functional::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_functional {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_caregiver::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_caregiver {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_patients::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_patients {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_pattern::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_pattern {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .card_karnofsky::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card_karnofsky {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  .mem::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mem {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .asm_list_btn{
+    position: absolute;
+    color: #395F6F;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 89%;
+    margin-top: -.35%;
+    }
+
+</style>
+<div class="name_of">
+  <button class="btn justify-content-end btn-light mr-2 asm_list_btn d-none" style="color: #395F6F;"
+  >View More</button>
+
+
+  <p class="patient_name" id="patient-id"
+      style="position: absolute; color: #395F6F;font-style:inter;size:26px;font-size:33px;margin-left: 0%;margin-top: -1%;">
+      </p>
+</div><br><br>
+
+<br>
+<select class="custom-select" id="scoring-sheet" onchange="location = this.value;">
+  <option value="1" hidden>Final Summary(Incl Karnofsky)</option>
+  <option value="assessment-care">Assessment / Care Plan</option>
+  <option value="clinical-assesment">Emotional And Pyshchosocial<br>Assessment Scoring Sheet</option>
+  <option value="assessment-scoring-s">Edmonton Symptom Assessment<br>(ESAS) Scoring Sheet</option>
+  <option value="assessment_final_sum" selected>Final Summary(Incl Karnofsky)</option>
+</select>
+
+<br>
+<br>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Care Priority</p>
+<div class="card_care row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Visit Frequency</p>
+<div class="card_visit row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Strong Opioids</p>
+<div class="card_strong row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Anti-depressants</p>
+<div class="card_anti row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Pain Score</p>
+<div class="card_pain row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Nausea Score</p>
+<div class="card_nausea row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Dsypnoea Scorel</p>
+<div class="card_dsypnoea row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">GHQ</p>
+<div class="card_ghq row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Family Support</p>
+<div class="card_family row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Familty Functional Status</p>
+<div class="card_functional row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Caregiver Attitude</p>
+<div class="card_caregiver row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Patients Insight</p>
+<div class="card_patients row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Communication pattern</p>
+<div class="card_pattern row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Karnofsky Performance Scale</p>
+<div class="card_karnofsky row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Completed by PALCARE team member</p>
+<div class="mem row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+
+<a id="final-sum" class="float" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+  </svg>
+</a>

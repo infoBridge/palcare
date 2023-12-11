@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "autoname": "VISIT-.####",
+ "creation": "2022-01-27 14:57:46.059565",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "enrolment_number",
+  "visit_date",
+  "visit_time",
+  "care_priority",
+  "zone",
+  "doctor_in_charge",
+  "other_doctor",
+  "nurse_in_charge",
+  "other_nurse",
+  "counselor",
+  "other_counsellor",
+  "palcare_staff",
+  "other",
+  "type_of_visit_section",
+  "mode_of_visit",
+  "follow_up_date",
+  "record_of_visits_section",
+  "date",
+  "by_whom"
+ ],
+ "fields": [
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Visit Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "visit_time",
+   "fieldtype": "Time",
+   "label": "Visit Time"
+  },
+  {
+   "fieldname": "doctor_in_charge",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor In Charge",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "other_doctor",
+   "fieldtype": "Table MultiSelect",
+   "label": "Other Doctor",
+   "options": "Other Doctor"
+  },
+  {
+   "fieldname": "nurse_in_charge",
+   "fieldtype": "Link",
+   "label": "Nurse In Charge",
+   "options": "Nurse"
+  },
+  {
+   "fieldname": "other_nurse",
+   "fieldtype": "Table MultiSelect",
+   "label": "Other Nurse",
+   "options": "Other Nurse"
+  },
+  {
+   "fieldname": "counselor",
+   "fieldtype": "Link",
+   "label": "Counselor",
+   "options": "Counselor"
+  },
+  {
+   "fieldname": "other_counsellor",
+   "fieldtype": "Table MultiSelect",
+   "label": "Other Counsellor",
+   "options": "Other Counselor"
+  },
+  {
+   "fieldname": "palcare_staff",
+   "fieldtype": "Table MultiSelect",
+   "label": "Palcare Staff",
+   "options": "Palcare Staff"
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "type_of_visit_section",
+   "fieldtype": "Select",
+   "label": "Type Of Visit",
+   "options": "\nEnrolment\nFollow Up\nBereavement"
+  },
+  {
+   "fieldname": "record_of_visits_section",
+   "fieldtype": "Section Break",
+   "label": "Record Of Visits"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "by_whom",
+   "fieldtype": "Data",
+   "label": "By Whom"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "zone",
+   "fieldtype": "Select",
+   "label": "Zone",
+   "options": "\nZone 1 - South Mumbai\nZone 2 - Central Mumbai\nZone 3 - West Mumbai - South\nZone 4 - West Mumbai - North\nZone 5 - East Mumbai\nZone 6 - Mainland"
+  },
+  {
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow Up Date"
+  },
+  {
+   "fieldname": "mode_of_visit",
+   "fieldtype": "Select",
+   "label": "Mode Of Visit",
+   "options": "\nPhysical\nVideo\nPhone"
+  },
+  {
+   "fieldname": "care_priority",
+   "fieldtype": "Select",
+   "label": "Care Priority",
+   "options": "\nHigh\nMedium\nLow"
+  },
+  {
+   "fetch_from": "patient.enrolment_number",
+   "fieldname": "enrolment_number",
+   "fieldtype": "Data",
+   "label": "Enrolment Number",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-21 20:25:06.297608",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Visit Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient_name",
+ "track_changes": 1
+}

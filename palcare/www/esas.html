@@ -1,0 +1,240 @@
+<style>
+    .form-control {
+        width: 60%;
+    }
+
+    .form-control1 {
+width: 60%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+background-image: none;
+border: 1px solid #F4F5F6;
+border-radius: 4px;
+}
+
+</style>
+
+
+<form id="peakyblinders">
+    <datalist id="patientid">
+        <option value="">
+        <option value="">
+    </datalist>
+
+    <label style="font-size:larger ;"><b>New Edmonton Symptom Assessment
+        </b></label>
+    <input type="button" class="btn btn-primary float-right" id="esas_button"
+        style="right:10%; z-index:9;background-color: #395F6F;color: white;" value="Save">
+        <br><br>
+    <div class="form-row">  
+        <div  style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <br>
+            <div class="form-check col-md-12" style="padding-left: 4%;">
+                <input class="form-check-input" type="checkbox" id="npatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">New Patient</label>
+            </div>
+            <div class="form-check col-md-12" style="padding-left: 4%;">
+                <input class="form-check-input" type="checkbox" id="epatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">Existing Patient</label>
+            </div><br>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="pdisplay">
+                <label for="inputEmail4">Patient <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="patient" placeholder="" list="patientid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="fdisplay">
+                <label for="inputEmail4">First Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="first_name" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="sdisplay">
+                <label for="inputEmail4">Surname <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="surname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="nameP">
+                <label for="inputPassword4">Patient Name</label>
+                <input type="text" readonly class="form-control" id="patientname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputPassword4">Date <span style="color:red;">*</span></label>
+                <input type="date" class="form-control" id="date" placeholder="" required="true">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Pain Score</label><br>
+                <select id="painscore" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>Not Done</option>
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Dyspnoea</label><br>
+                <select id="dyspnoea" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>Not Done</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Nausea / Vomiting</label><br>
+                <select id="nausea" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>Not Done</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Appetite</label><br>
+                <select id="appetite" class="form-control1">
+                    <option selected></option>
+                    <option>Normal</option>
+                    <option>Poor</option>
+                    <option>Soft Diet</option>
+                    <option>Fluid Diet</option>
+                    <option>Clear Fluids</option>
+                    <option>Tube Feed</option>
+                    <option>Not Eating</option>
+                    <option>P</option>
+                    <option>SF</option>
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Sleep</label><br>
+                <select id="sleep" class="form-control1">
+                    <option selected></option>
+                    <option>Normal</option>
+                    <option>Disturbed</option>
+                    <option>Insominia</option>
+                    <option>Reverse</option>
+
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Bladder</label><br>
+                <select id="bladder" class="form-control1">
+                    <option selected></option>
+                    <option>Diaper</option>
+                    <option>IDC</option>
+                    <option>Others</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Bowel</label><br>
+                <select id="bowel" class="form-control1">
+                    <option selected></option>
+                    <option>Normal</option>
+                    <option>Diarrhoea</option>
+                    <option>Constipated</option>
+                    <option>Maleamic</option>
+                    <option>Fresh Blood</option>
+                    <option>Colostomy</option>
+                    <option>Others (e.g., BNO)</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Skin</label><br>
+                <select id="skin" class="form-control1">
+                    <option selected></option>
+                    <option>Moist</option>
+                    <option>Dry</option>
+                    <option>Fragile</option>
+                    <option>Intact</option>
+                    <option>Tear</option>
+                    <option>Others (e.g., broken skin, Pressure Injuries)</option>
+
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputEmail4">Oral Assessment</label>
+                <input type="text" class="form-control" id="oral" placeholder="">
+            </div>
+            <p style="padding-left: 2%;color:#8A8A8A;">L: Lips, L1: Smooth, Pink & Moist, L2: Dry , L3: Cracked, L4:
+                Ulcerated,
+                L5: Bleeding,T: Tongue, T1: Pink & Moist, T2: Coated T3: Dry, T4: Thrush + - low ++ - moderate +++ -
+                severe,
+                MM: Mucous Membrane, M1: Pink & Moist , M2: Reddened,M3: Ulceration, M4: Thrush + - low ++ - moderate
+                +++ -
+                severe,
+                G: Gums,G1: Pink,G2: Oedematous,G3: Redness,G4: Bleeding, TT: Teeth,TT1: Clean,TT2: Debris,
+                TT3: Dental Caries,TT4: Loose Teeth,TT5: Denture</p>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputEmail4">Pressure Injuries</label>
+                <input type="text" class="form-control" id="pressure" placeholder="">
+            </div>
+            <p style="padding-left: 2%;color:#8A8A8A;">S1: Stage 1 S2: Stage 2 S3: Stage 3 S4: Stage 4 S5: Unstageable
+                S6:
+                Suspected Deep Tissue Injury. Stage 1: Intact skin with non-blanchable redness of a localised area
+                usually
+                over a bony prominence.
+                Stage 2: Partial thickness loss of dermis presenting as a shallow open ulcer with a red pink wound bed
+                without slough
+                Stage 3: Full thickness tissue loss. Subcutaneous fat may be visible but bone, muscle is exposed Stage
+                4: Full thickness loss with exposed bone, tendon or muscle Stage 5: Unstageable: Full thickness tissue
+                loss
+                in which actual depth of the ulcer is completely obscured by slough (yellow, tan, grey, green or brown)
+                Stage 6: Suspected Deep Tissue Injury Purple or maroon localised area of discoloured intact skin or
+                blood-filled
+                blister due to damage of underlying soft tissue from pressure and/or shear</p>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Tired</label><br>
+                <select id="tired" class="form-control1">
+                    <option selected></option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+
+                <label>Name of Palcare Team Member</label>
+                <input type="text" class="form-control" id="palname" placeholder="">
+
+            </div>
+            <br>
+        </div>
+    </div>
+</form>

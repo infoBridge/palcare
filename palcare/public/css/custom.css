@@ -1,0 +1,38 @@
+.navbar-home img {
+
+    max-height: 100% !important;
+}
+
+.order {
+    background-color: #395F6F !important;
+
+}
+
+.primary-action {
+    background-color: #395F6F !important;
+}
+
+.btn-modal-primary {
+
+    background-color: #395F6F !important;
+}
+
+.btn.btn-sm.btn-primary.btn-block.btn-login {
+    background-color: #395F6F;
+}
+
+.back-icon {
+    margin-left: 0;
+    padding: 28px;
+}
+
+.nav-item.dropdown.dropdown-help.dropdown-mobile.d-none.d-lg-block{
+    display: none;
+}
+.nav-item.dropdown.dropdown-help {display:none} 
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    .back-icon {
+        margin-left: 0;
+    }
+}

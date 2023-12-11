@@ -1,0 +1,490 @@
+<style>
+  .float {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    bottom: 5%;
+    right: 18.5%;
+    background-color: #395F6F;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+  }
+
+  .my-float {
+    margin-top: 16px;
+
+  }
+
+
+  .custom-select {
+    font-size: 25px;
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #395F6F;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    padding: 2px 50px 2px 10px;
+    border: none;
+    background-image: url("https://img.icons8.com/ios-filled/50/FFFFFF/chevron-down.png");
+    background-repeat: no-repeat;
+    background-position: 97%;
+    background-size: 20px;
+  }
+
+  .score::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_dyspnoea::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_dyspnoea {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_nausea::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_nausea {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_appetite::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_appetite {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_sleep::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_sleep {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_bladder::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_bladder {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_bowel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_bowel {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_skin::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_skin {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_oral::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_oral {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_pressure::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_pressure {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .score_tired::-webkit-scrollbar {
+    display: none;
+  }
+
+  .score_tired {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .memb::-webkit-scrollbar {
+    display: none;
+  }
+
+  .memb {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  /* Appetite */
+  #popup-container-score {
+    position: absolute;
+    left: 1%;
+    top: 25%;
+    z-index: 11111;
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    background: #DEDEDE;
+    display: none;
+
+  }
+
+  #close-btn-score {
+    float: right;
+    cursor: pointer;
+  }
+
+  /* sleep */
+
+  #popup-container-score1 {
+    position: absolute;
+    left: 1%;
+    top: 34%;
+    z-index: 11111;
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    background: #DEDEDE;
+    display: none;
+
+  }
+
+  #close-btn-score1 {
+    float: right;
+    cursor: pointer;
+  }
+
+  /* Bladder */
+
+  #popup-container-score2 {
+    position: absolute;
+    left: 1%;
+    top: 43%;
+    z-index: 11111;
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    background: #DEDEDE;
+    display: none;
+
+  }
+
+  #close-btn-score2 {
+    float: right;
+    cursor: pointer;
+  }
+
+  /* Bowel */
+  #popup-container-score3 {
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    z-index: 11111;
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    background: #DEDEDE;
+    display: none;
+
+  }
+
+  #close-btn-score3 {
+    float: right;
+    cursor: pointer;
+  }
+
+  /* Skin */
+  #popup-container-score4 {
+    position: absolute;
+    left: 1%;
+    top: 57%;
+    z-index: 11111;
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    background: #DEDEDE;
+    display: none;
+
+  }
+
+  #close-btn-score4 {
+    float: right;
+    cursor: pointer;
+  }
+  .sco_list_btn{
+    position: absolute;
+    color: #395F6F;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 89%;
+    margin-top: -.3%;
+    }
+
+</style>
+
+<div class="name_of">
+  <button class="btn justify-content-end btn-light mr-2 sco_list_btn d-none" style="color: #395F6F;"
+  >View More</button>
+
+
+  <p class="patient_name" id="patient-id"
+      style="position: absolute; color: #395F6F;font-style:inter;size:26px;font-size:33px;margin-left: 0%;margin-top: -1%;">
+      </p>
+</div><br><br>
+<br>
+<select class="custom-select" id="final-sum" onchange="location = this.value;">
+  <option value="1" hidden>Edmonton Symptom Assessment<br>(ESAS) Scoring Sheet</option>
+  <option value="assessment-care">Assessment / Care Plan</option>
+  <option value="clinical-assesment">Emotional And Pyshchosocial<br>Assessment Scoring Sheet</option>
+  <!-- <option disabled>──────────────────────────────────────────────────────────────────────</option> -->
+  <option value="assessment-scoring-s" selected>Edmonton Symptom Assessment<br>(ESAS) Scoring Sheet</option>
+  <!-- <option disabled>──────────────────────────────────────────────────────────────────────</option> -->
+  <option value="assessment_final_sum">Final Summary(Incl Karnofsky)</option>
+</select>
+
+
+<br>
+<br>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Pain Score</p>
+<div class="score row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<!-- </div> -->
+
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Dyspnoea</p>
+<div class="score_dyspnoea row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Nausea / Vomiting</p>
+<div class="score_nausea row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Appetite&nbsp;&nbsp;
+  <span id="show-popup-btn-score"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path
+        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+    </svg></span>
+<div id="popup-container-score">
+  <div id="close-btn-container-score">
+    <span id="close-btn-score" style="margin-right:5%;margin-top:4%;"> <svg xmlns="http://www.w3.org/2000/svg"
+        width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg> </span>
+  </div>
+  <p style="color:#333333;margin-left:5%;margin-top:4%;font-size: 18px;font-weight: bold;font-family: Inter;font-style: normal;">Appetite</p>
+  <p style="color:#8A8A8A;margin-left:5%;font-size: 18px;font-family: Inter;font-style: normal;">NM: Normal, P: Poor, SF: Soft Diet, FD: Fluid Diet, CF: Clear
+    Fluids, TF: Tube Feed, NE: Not Eating</p>
+</div>
+
+</p>
+<div class="score_appetite row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Sleep&nbsp;&nbsp;
+  <span id="show-popup-btn-score1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path
+        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+    </svg></span>
+<div id="popup-container-score1">
+  <div id="close-btn-container-score1">
+    <span id="close-btn-score1" style="margin-right:5%;margin-top:4%;"> <svg xmlns="http://www.w3.org/2000/svg"
+        width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg> </span>
+  </div>
+  <p style="color:#333333;margin-left:5%;margin-top:4%;font-size: 18px;font-weight: bold;font-family: Inter;font-style: normal;">Sleep</p>
+  <p style="color:#8A8A8A;margin-left:5%;font-size: 18px;font-family: Inter;font-style: normal;">N: Normal, D: Disturbed, IN: Insomnia, RV: Reverse</p>
+</div>
+
+</p>
+<div class="score_sleep row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Bladder&nbsp;&nbsp;
+  <span id="show-popup-btn-score2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path
+        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+    </svg></span>
+<div id="popup-container-score2">
+  <div id="close-btn-container-score3">
+    <span id="close-btn-score2" style="margin-right:5%;margin-top:4%;"> <svg xmlns="http://www.w3.org/2000/svg"
+        width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg> </span>
+  </div>
+  <p style="color:#333333;margin-left:5%;margin-top:4%;font-size: 18px;font-weight: bold;font-family: Inter;font-style: normal;">Bladder</p>
+  <p style="color:#8A8A8A;margin-left:5%;font-size: 18px;font-family: Inter;font-style: normal;">DP: Diaper, IDC: IDC, O: Others (e.g., NPU, ARU)</p>
+</div>
+
+</p>
+<div class="score_bladder row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Bowel&nbsp;&nbsp;
+  <span id="show-popup-btn-score3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path
+        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+    </svg></span>
+<div id="popup-container-score3">
+  <div id="close-btn-container-score3">
+    <span id="close-btn-score3" style="margin-right:5%;margin-top:4%;"> <svg xmlns="http://www.w3.org/2000/svg"
+        width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg> </span>
+  </div>
+  <p style="color:#333333;margin-left:5%;margin-top:4%;font-size: 18px;font-weight: bold;font-family: Inter;font-style: normal;">Bowel</p>
+  <p style="color:#8A8A8A;margin-left:5%;font-size: 18px;font-family: Inter;font-style: normal;">NM: Normal, DR: Diarrhoea, C: Constipated, M: Maleamic, FB:
+    Fresh Blood, CT: Colostomy, O: Others </p>
+</div>
+
+</p>
+<div class="score_bowel row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Skin&nbsp;&nbsp;
+  <span id="show-popup-btn-score4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path
+        d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+    </svg></span>
+<div id="popup-container-score4">
+  <div id="close-btn-container-score4">
+    <span id="close-btn-score4" style="margin-right:5%;margin-top:4%;"> <svg xmlns="http://www.w3.org/2000/svg"
+        width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+      </svg> </span>
+  </div>
+  <p style="color:#333333;margin-left:5%;margin-top:4%;font-size: 18px;font-weight: bold;font-family: Inter;font-style: normal;">Skin</p>
+  <p style="color:#8A8A8A;margin-left:5%;font-size: 18px;font-family: Inter;font-style: normal;">Skin Score: SS: Skin SS1: Moist     SS2:  Dry     SS3: Fragile     SS4: Intact     SS5: Tear     SS6: Others (e.g., broken skin, Pressure Injuries)
+  </p>
+</div>
+
+</p>
+<div class="score_skin row" style=" overflow-x: auto;    flex-wrap: nowrap;"></div>
+<!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Oral Assessment</p>
+<div class="score_oral row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Pressure Injuries</p>
+<div class="score_pressure row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Tired</p>
+<div class="score_tired row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+<p style="color:#8A8A8A;font-size:18px;font-family: Inter;font-style: normal;">Name of Palcare Team Member</p>
+<div class="memb row" style=" overflow-x: auto;    flex-wrap: nowrap;">
+  <!-- data -->
+</div>
+<br>
+
+<hr>
+<br>
+
+<a id="esas" class="float" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+  </svg>
+</a>

@@ -1,0 +1,580 @@
+{
+ "actions": [],
+ "autoname": "MED-.####",
+ "creation": "2022-02-09 15:22:03.287769",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "enrolment_number",
+  "enrolment_date",
+  "medical_details_section",
+  "non_cancer",
+  "if_cancer",
+  "cancer_section",
+  "primary_site",
+  "secondary_site",
+  "diagnosed_year",
+  "diagnosed_by",
+  "recovered_year",
+  "re_occured_year",
+  "stage",
+  "prognosis",
+  "chemotherapy",
+  "radiation_type",
+  "surgery",
+  "immunotherapy",
+  "non_cancer_section",
+  "type_of_non_cancer",
+  "diagnosed_year1",
+  "diagnosed_from1",
+  "prognosis1",
+  "for_both",
+  "is_on_active_treatment",
+  "alternative_therapies",
+  "type_of_alternative_therapy",
+  "comorbidiities",
+  "allergens",
+  "patient_is_aware_of_herhis_condition",
+  "diagnosis",
+  "prognosis2",
+  "revealed_by",
+  "family_is_aware_into_patient_condition",
+  "diagnosis1",
+  "prognosis3",
+  "revealed_by1",
+  "pain_history_section",
+  "site",
+  "intensity_score",
+  "type",
+  "frequency",
+  "aggravator",
+  "reliever",
+  "impact_of_pain_on_quality_of_life",
+  "pain_assessment",
+  "column_break_118",
+  "treatment_history_analgesics_only",
+  "response_to_pain_medications",
+  "column_break_122",
+  "others",
+  "general_examination_section",
+  "height",
+  "weight",
+  "blood_pressure",
+  "pulse",
+  "temperature",
+  "spo2",
+  "pallor",
+  "icterus",
+  "clubbing",
+  "column_break_133",
+  "lymphadenopathy",
+  "oedema",
+  "ambulation",
+  "cyanosis",
+  "oral_examination",
+  "pr",
+  "rr",
+  "general_appearance",
+  "level_of_consciousness",
+  "alerts",
+  "diagnosis_in_brief_section",
+  "history_of_illness_section",
+  "history_of_illness",
+  "systematic_and_local_examination_section",
+  "systematic_and_local_examination",
+  "additional_doctors_notes_on_enrollment_section",
+  "additional_doctors_notes_on_enrollment",
+  "genogram_section",
+  "attach_image_155"
+ ],
+ "fields": [
+  {
+   "fieldname": "medical_details_section",
+   "fieldtype": "Section Break",
+   "label": "Medical Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "if_cancer",
+   "fieldtype": "Check",
+   "label": "Cancer"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "diagnosed_year",
+   "fieldtype": "Data",
+   "label": "Diagnosed Year"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "primary_site",
+   "fieldtype": "Data",
+   "label": "Type of Cancer / Primary Site"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "secondary_site",
+   "fieldtype": "Data",
+   "label": "Secondary Site"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "recovered_year",
+   "fieldtype": "Data",
+   "label": "Recovered Year"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "re_occured_year",
+   "fieldtype": "Data",
+   "label": "Re occured Year"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "\nI\nII\nIII\nIV\nV\nVI"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "prognosis",
+   "fieldtype": "Select",
+   "label": "Prognosis",
+   "options": "\nCurable\nLong Life Span\nMedium Life span\nPoor\nVery Poor\nCan\u2019t say"
+  },
+  {
+   "default": "0",
+   "fieldname": "non_cancer",
+   "fieldtype": "Check",
+   "label": "Non Cancer"
+  },
+  {
+   "depends_on": "eval:doc.non_cancer == 1",
+   "fieldname": "diagnosed_year1",
+   "fieldtype": "Data",
+   "label": "Diagnosed Year"
+  },
+  {
+   "fieldname": "diagnosed_from1",
+   "fieldtype": "Data",
+   "label": "Diagnosed From"
+  },
+  {
+   "fieldname": "prognosis1",
+   "fieldtype": "Select",
+   "label": "Prognosis",
+   "options": "\nCurable\nLong Life Span\nMedium Life span\nPoor\nVery Poor\nCan\u2019t say"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "for_both",
+   "fieldtype": "Section Break",
+   "label": "For Both"
+  },
+  {
+   "fieldname": "is_on_active_treatment",
+   "fieldtype": "Select",
+   "label": "Is on active treatment",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "patient_is_aware_of_herhis_condition",
+   "fieldtype": "Heading",
+   "label": "Patient is aware of her/his condition"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Select",
+   "label": "Diagnosis",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "prognosis2",
+   "fieldtype": "Select",
+   "label": "Prognosis",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "revealed_by",
+   "fieldtype": "Select",
+   "label": "Revealed by",
+   "options": "\nDoctor\nFamily\nSelf Guess\nOthers"
+  },
+  {
+   "fieldname": "family_is_aware_into_patient_condition",
+   "fieldtype": "Heading",
+   "label": "Family is aware into patient condition"
+  },
+  {
+   "fieldname": "diagnosis1",
+   "fieldtype": "Select",
+   "label": "Diagnosis",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "prognosis3",
+   "fieldtype": "Select",
+   "label": "Prognosis",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "revealed_by1",
+   "fieldtype": "Select",
+   "label": "Revealed by",
+   "options": "\nDoctor\nFamily\nSelf Guess"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "pain_history_section",
+   "fieldtype": "Section Break",
+   "label": "Pain History"
+  },
+  {
+   "fieldname": "intensity_score",
+   "fieldtype": "Select",
+   "label": "Intensity Score",
+   "options": "\nBearable\nUnbearable\nMild\nMod\nSevere\nOthers"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type"
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Data",
+   "label": "Frequency"
+  },
+  {
+   "fieldname": "aggravator",
+   "fieldtype": "Data",
+   "label": "Aggravator"
+  },
+  {
+   "fieldname": "reliever",
+   "fieldtype": "Data",
+   "label": "Reliever"
+  },
+  {
+   "fieldname": "impact_of_pain_on_quality_of_life",
+   "fieldtype": "Data",
+   "label": "Impact of pain on quality of life"
+  },
+  {
+   "fieldname": "column_break_118",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "treatment_history_analgesics_only",
+   "fieldtype": "Text",
+   "label": "Treatment history (analgesics only)"
+  },
+  {
+   "fieldname": "response_to_pain_medications",
+   "fieldtype": "Text",
+   "label": "Response to pain medications"
+  },
+  {
+   "fieldname": "column_break_122",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Text",
+   "label": "Others"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "general_examination_section",
+   "fieldtype": "Section Break",
+   "label": "General Examination"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Data",
+   "label": "Height"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "blood_pressure",
+   "fieldtype": "Data",
+   "label": "Blood Pressure"
+  },
+  {
+   "fieldname": "pulse",
+   "fieldtype": "Data",
+   "label": "Pulse"
+  },
+  {
+   "fieldname": "temperature",
+   "fieldtype": "Data",
+   "label": "Temperature"
+  },
+  {
+   "fieldname": "spo2",
+   "fieldtype": "Data",
+   "label": "SpO2"
+  },
+  {
+   "fieldname": "pallor",
+   "fieldtype": "Data",
+   "label": "Pallor"
+  },
+  {
+   "fieldname": "icterus",
+   "fieldtype": "Data",
+   "label": "Icterus"
+  },
+  {
+   "fieldname": "clubbing",
+   "fieldtype": "Data",
+   "label": "Clubbing"
+  },
+  {
+   "fieldname": "column_break_133",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lymphadenopathy",
+   "fieldtype": "Data",
+   "label": "Lymphadenopathy"
+  },
+  {
+   "fieldname": "oedema",
+   "fieldtype": "Data",
+   "label": "Oedema"
+  },
+  {
+   "fieldname": "ambulation",
+   "fieldtype": "Data",
+   "label": "Ambulation "
+  },
+  {
+   "fieldname": "cyanosis",
+   "fieldtype": "Data",
+   "label": "Cyanosis"
+  },
+  {
+   "fieldname": "oral_examination",
+   "fieldtype": "Data",
+   "label": "Oral Examination"
+  },
+  {
+   "fieldname": "pr",
+   "fieldtype": "Data",
+   "label": "PR"
+  },
+  {
+   "fieldname": "rr",
+   "fieldtype": "Data",
+   "label": "RR"
+  },
+  {
+   "fieldname": "general_appearance",
+   "fieldtype": "Data",
+   "label": "General Appearance"
+  },
+  {
+   "fieldname": "level_of_consciousness",
+   "fieldtype": "Data",
+   "label": "Level of Consciousness"
+  },
+  {
+   "fieldname": "alerts",
+   "fieldtype": "Select",
+   "label": "Alerts",
+   "options": "\nAllergies\nCo Morbidities\nOther Alerts"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "diagnosis_in_brief_section",
+   "fieldtype": "Section Break",
+   "label": "Diagnosis In Brief"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "history_of_illness_section",
+   "fieldtype": "Section Break",
+   "label": "History Of Illness"
+  },
+  {
+   "fieldname": "history_of_illness",
+   "fieldtype": "Text",
+   "label": "History Of Illness"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "systematic_and_local_examination_section",
+   "fieldtype": "Section Break",
+   "label": "Systematic and Local Examination"
+  },
+  {
+   "fieldname": "systematic_and_local_examination",
+   "fieldtype": "Text",
+   "label": "Systematic and Local Examination"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "additional_doctors_notes_on_enrollment_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Doctors Notes On Enrollment"
+  },
+  {
+   "fieldname": "additional_doctors_notes_on_enrollment",
+   "fieldtype": "Text",
+   "label": "Additional Doctors Notes On Enrollment"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "genogram_section",
+   "fieldtype": "Section Break",
+   "label": "Genogram"
+  },
+  {
+   "fieldname": "attach_image_155",
+   "fieldtype": "Attach Image"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "cancer_section",
+   "fieldtype": "Section Break",
+   "label": "Cancer"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.non_cancer == 1",
+   "fieldname": "non_cancer_section",
+   "fieldtype": "Section Break",
+   "label": "Non Cancer"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "site",
+   "fieldtype": "Data",
+   "label": "Site"
+  },
+  {
+   "fieldname": "radiation_type",
+   "fieldtype": "Long Text",
+   "label": "Radiation Type"
+  },
+  {
+   "depends_on": "eval:doc.non_cancer == 1",
+   "fieldname": "type_of_non_cancer",
+   "fieldtype": "Data",
+   "label": "Type of Non Cancer"
+  },
+  {
+   "fetch_from": "patient.enrolment_number",
+   "fieldname": "enrolment_number",
+   "fieldtype": "Data",
+   "label": "Enrolment Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "patient.date_of_enrolment",
+   "fieldname": "enrolment_date",
+   "fieldtype": "Date",
+   "label": "Enrolment Date"
+  },
+  {
+   "depends_on": "eval:doc.if_cancer == 1",
+   "fieldname": "diagnosed_by",
+   "fieldtype": "Data",
+   "label": "Diagnosed By"
+  },
+  {
+   "fieldname": "chemotherapy",
+   "fieldtype": "Long Text",
+   "label": "Chemotherapy"
+  },
+  {
+   "fieldname": "immunotherapy",
+   "fieldtype": "Long Text",
+   "label": "Immunotherapy"
+  },
+  {
+   "fieldname": "alternative_therapies",
+   "fieldtype": "Select",
+   "label": "Alternative Therapies",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "type_of_alternative_therapy",
+   "fieldtype": "Select",
+   "label": "Type of Alternative Therapy",
+   "options": "\nAyurveda\nHoemopathy\nSidha\nUnani\nNaturopathy\nYoga\nAccupuncture\nTens\nOther Alternative Therapies"
+  },
+  {
+   "fieldname": "pain_assessment",
+   "fieldtype": "Attach Image",
+   "label": "Pain Assessment Chart "
+  },
+  {
+   "fieldname": "comorbidiities",
+   "fieldtype": "Table MultiSelect",
+   "label": "Comorbidiities",
+   "options": "Other Comorbidiities"
+  },
+  {
+   "fieldname": "allergens",
+   "fieldtype": "Table MultiSelect",
+   "label": "Allergens",
+   "options": "Other Allergens"
+  },
+  {
+   "fieldname": "surgery",
+   "fieldtype": "Long Text",
+   "label": "Surgery"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-10 16:39:13.790464",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Medical Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient_name",
+ "track_changes": 1
+}

@@ -1,0 +1,97 @@
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Float four columns side by side */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 1 10px;
+
+    }
+
+    /* Remove extra left and right margins, due to padding */
+    .row {
+        margin: 0 -5px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .card-text {
+        font-size: 32px;
+        color: white;
+        padding: 10%;
+
+    }
+
+
+
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    /* Style the counter cards */
+    .card {
+        padding: 56px;
+        background-color: #f1f1f1;
+        border-radius: 0
+    }
+
+</style>
+
+<div class="row">
+    <div class="col-6">
+        <div class="card"
+            style="background-image:url(https://dev-palcare.frappe.cloud/files/shutterstock_1551346592%201.png);background-size:cover;height:100%;">
+            <p class="card-text" id="home-enroll-para">Enroll a<br>
+                new patient</p>
+           
+            <button type="button" onclick="location.href=`https://dev-palcare.frappe.cloud/app/patient/new-patient-1`"
+                class="btn btn-primary banner-bt ml-5 home " id="home-id-enroll"
+                style="width: 95px;height: 38px;background-color:#395F6F;">Enroll</button>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card" style="background-color: #ffff;">
+            <div class="row d-flex justify-content-between align-items-center mb-4 recent ml-1 mt-0"
+                style="color: #395F6F;">View / Update Patients
+                <button class="btn justify-content-end btn-light mr-2"
+                    style="color: #395F6F;margin-left: auto;"
+                    onclick="location.href=`https://dev-palcare.frappe.cloud/app/patient`">View More</button>
+            </div>
+            <div class="card-list row">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-12"><br>
+        <div class="card" style="height:100%;background-color: #ffff;width:100%;">
+            <div class="row d-flex justify-content-between align-items-center mb-4 recent ml-1 mt-0"
+                style="color: #395F6F;">Directory of Patients by Priority
+                <button class="btn justify-content-end btn-light mr-2" style="color: #395F6F;margin-left: auto;"
+                    onclick="location.href=`https://dev-palcare.frappe.cloud/app/zone-s-mumbai`">View More</button>
+            </div><br>
+            <div class="card-active row">
+
+            </div>
+        </div>
+    </div>
+</div>

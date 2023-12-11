@@ -1,0 +1,47 @@
+<style>
+    .column {
+  float: right;
+  width: 25%;
+  padding: 0 10px;
+  margin-left: 20px;
+  }
+  
+  
+  .row {margin: 0 -5 px;}
+  
+  
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  }
+  
+  
+  .card {
+  margin-left: 40%;
+  padding: 16px;
+  text-align: center;
+  min-height: 120px;
+  background-color: #ffff;
+  width:130px;
+  font-size: 16px;
+  }
+  </style>
+  <div class="row">
+      <div class="column">
+        <div class="card">
+          <p class="score1" style="color: #395F6F;margin-top: 20px;">Card 1</p>
+          <p class="score2" style="color: #8A8A8A;">Some text</p>
+          <!-- <p></p> -->
+        </div><br>
+      </div>
+    </div> 

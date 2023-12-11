@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include palcare *.css
+recursive-include palcare *.csv
+recursive-include palcare *.html
+recursive-include palcare *.ico
+recursive-include palcare *.js
+recursive-include palcare *.json
+recursive-include palcare *.md
+recursive-include palcare *.png
+recursive-include palcare *.py
+recursive-include palcare *.svg
+recursive-include palcare *.txt
+recursive-exclude palcare *.pyc

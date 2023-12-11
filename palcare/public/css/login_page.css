@@ -1,0 +1,34 @@
+.btn.btn-primary.btn-login{
+    background-color: #8BC751 !important
+}
+
+.page-card-head h4{
+
+    text-indent: -9999px;
+    background-image: url(https://dev-palcare.frappe.cloud/files/Asset%201@4x%201.png);
+    height: 154px;
+    width: 214px;
+    margin-top: 30px;
+    white-space: nowrap;
+    margin-left: 90px;
+}
+
+.sign-up-message{
+    text-indent: -9999px;
+    position: relative;
+}
+
+.for-login .page-card-head img{
+
+    display: none;
+}
+
+.sign-up-message .jimmy-s{
+    height: 40px;
+    width: 163px;
+    background-image: url(https://dev-palcare.frappe.cloud/files/JSB-Logo-Color.png);
+    
+}
+
+
+

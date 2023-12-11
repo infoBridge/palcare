@@ -1,0 +1,66 @@
+<style>
+    .custom-select {
+        font-size: 25px;
+        height: 70px;
+        color: #FFFFFF;
+        background-color: #395F6F;
+    }
+
+    .float {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        bottom: 5%;
+        right: 18.5%;
+        background-color: #395F6F;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+
+    .my-float {
+        margin-top: 16px;
+
+    }
+
+    .med_list_btn {
+        position: absolute;
+        color: #395F6F;
+        text-align: center;
+        font-size: 16px;
+        margin-left: 89%;
+        margin-top: -.3%;
+    }
+</style>
+
+
+<div class="name_of">
+    <button class="btn justify-content-end btn-light mr-2 med_list_btn d-none" style="color: #395F6F;">View More</button>
+
+
+    <p class="patient_name" id="patient-id"
+        style="position: absolute; color: #395F6F;font-style:inter;size:26px;font-size:33px;margin-left: 0%;margin-top: -1%;">
+    </p>
+    <div>
+       <div class="medic">
+            <br><br>
+            <!-- data -->
+        </div>
+
+        <br>
+
+        <a id="sched" class="float" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-plus-lg"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+            </svg>
+        </a>
+    </div>
+</div>

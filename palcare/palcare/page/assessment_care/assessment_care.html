@@ -1,0 +1,62 @@
+<style>
+    .float {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      bottom: 5%;
+      right: 18.5%;
+      background-color: #395F6F;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+  
+    .my-float {
+      margin-top: 16px;
+  
+    }
+  
+  
+    .custom-select {
+      font-size: 25px;
+      height: 50px;
+      color: #FFFFFF;
+      background-color: #395F6F;
+      border-radius: 3px;
+      -webkit-appearance: none;
+      -moz-appearance: window;
+      padding: 2px 50px 2px 10px;
+      border: none;
+      background-image: url("https://img.icons8.com/ios-filled/50/FFFFFF/chevron-down.png");
+      background-repeat: no-repeat;
+      background-position: 97%;
+      background-size: 20px;
+    }
+  
+    
+  </style>
+  
+  <div class="name_of">
+   
+    <p class="patient_name" id="patient-id"
+        style="position: absolute; color: #395F6F;font-style:inter;size:26px;font-size:33px;margin-left: 0%;margin-top: -1%;">
+        </p>
+  </div><br><br>
+  <br>
+  <select class="custom-select" id="assessment_care_pan" onchange="location = this.value;">
+    <option value="1" hidden>Assessment / Care Plan</option>
+    <option value="assessment-care" selected>Assessment / Care Plan</option>
+    <option value="clinical-assesment">Emotional And Pyshchosocial<br>Assessment Scoring Sheet</option>
+    <!-- <option disabled>──────────────────────────────────────────────────────────────────────</option> -->
+    <option value="assessment-scoring-s">Edmonton Symptom Assessment<br>(ESAS) Scoring Sheet</option>
+    <!-- <option disabled>──────────────────────────────────────────────────────────────────────</option> -->
+    <option value="assessment_final_sum">Final Summary(Incl Karnofsky)</option>
+  
+  </select>
+  

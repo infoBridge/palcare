@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "autoname": "PHOTO-.####",
+ "creation": "2022-02-16 08:42:03.143320",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "patient",
+  "uploaded_on",
+  "user",
+  "image",
+  "image_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "uploaded_on",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Uploaded On",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image_4",
+   "fieldtype": "Image",
+   "options": "image"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Read Only",
+   "label": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-19 17:21:55.364191",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Photos",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient",
+ "track_changes": 1
+}

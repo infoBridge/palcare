@@ -1,0 +1,15 @@
+{
+    "background_color": "purple",
+    "description": "PWA for palcare",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "/files/Palcare 192 X 192.png    ",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "name": "Palcare",
+    "short_name": "Palcare",
+    "start_url": "/app/palcare-home"
+}

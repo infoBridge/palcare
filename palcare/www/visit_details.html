@@ -1,0 +1,186 @@
+<style>
+    .form-control {
+        width: 60%;
+    }
+
+    .form-control1 {
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        background-image: none;
+        border: 1px solid #F4F5F6;
+        border-radius: 4px;
+    }
+</style>
+
+
+<form id="parasite">
+    <datalist id="patientid">
+        <option value="">
+        <option value="Patient">
+    </datalist>
+    <datalist id="doctorid">
+        <option value="">
+    </datalist>
+    <datalist id="nurseid">
+        <option value="">
+    </datalist>
+    <datalist id="counselorid">
+        <option value="">
+    </datalist>
+    <label style="font-size:larger ;"><b>New Visit Details
+        </b></label>
+    <input type="button" class="btn btn-primary float-right" id="visit_button"
+        style="right:10%; z-index:9;background-color: #395F6F;color: white;" value="Save">
+
+    <div class="form-row">
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <div class="form-check col-md-12" style="padding-left: 4%;">
+                <br>
+                <input class="form-check-input" type="checkbox" id="npatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">New Patient</label>
+            </div>
+            <div class="form-check col-md-12" style="padding-left: 4%;">
+                <input class="form-check-input" type="checkbox" id="epatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">Existing Patient</label>
+            </div>
+            <br>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="pdisplay">
+                <label for="inputEmail4">Patient <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="patient" placeholder="" list="patientid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="fdisplay">
+                <label for="inputEmail4">First Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="first_name" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="sdisplay">
+                <label for="inputEmail4">Surname <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="surname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;" id="nameP">
+                <label for="inputPassword4">Patient Name</label>
+                <input type="text" readonly class="form-control" id="patientname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputPassword4">Visit Date <span style="color:red;">*</span></label>
+                <input type="date" class="form-control" id="vdate" placeholder="" required="true">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputPassword4">Visit Time</label> <input type="time" class="form-control" id="vtime"
+                    placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Care Priority</label><br>
+                <select id="carep" class="form-control1">
+                    <option selected></option>
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Zone</label><br>
+                <select id="zone1" class="form-control1">
+                    <option selected></option>
+                    <option>Zone 1 - South Mumbai</option>
+                    <option>Zone 2 - Central Mumbai</option>
+                    <option>Zone 3 - West Mumbai - South</option>
+                    <option>Zone 4 - West Mumbai - North</option>
+                    <option>Zone 5 - East Mumbai</option>
+                    <option>Zone 6 - Mainland</option>
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Doctor In Charge <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="incharge" placeholder="" list="doctorid" required="true">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Other Doctor</label>
+                <input type="text" class="form-control" id="otherdocter" placeholder="" list="doctorid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Nurse In Charge <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="nurseincharge" placeholder="" list="nurseid"
+                    required="true">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Other Nurse</label>
+                <input type="text" class="form-control" id="othernurse" placeholder="" list="nurseid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Counselor</label>
+                <input type="text" class="form-control" id="counselor" placeholder="" list="counselorid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Other Counsellor</label>
+                <input type="text" class="form-control" id="othercounsellor" placeholder="" list="counselorid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Palcare Staff</label>
+                <input type="text" class="form-control" id="palcarestaff" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Other</label>
+                <input type="text" class="form-control" id="vother" placeholder="">
+                <br>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <br>
+            <label style="font-size:larger ;padding-left: 2%;"><b>Type Of Visit</b></label>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Enrolment</label><br>
+                <select id="enrolment" class="form-control1" required="true">
+                    <option selected></option>
+                    <option>Physical</option>
+                    <option>Video</option>
+                    <option>Phone</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Follow Up</label><br>
+                <select id="followup" class="form-control1">
+                    <option selected></option>
+                    <option>Physical</option>
+                    <option>Video</option>
+                    <option>Phone</option>
+                </select>
+            </div>
+
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputPassword4">Follow Up Date</label>
+                <input type="date" class="form-control" id="followupdate" placeholder="">
+            </div>
+
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="inputState">Bereavement</label><br>
+                <select id="bereavement" class="form-control1">
+                    <option selected></option>
+                    <option>Physical</option>
+                    <option>Video</option>
+                    <option>Phone</option>
+                </select>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 7%;">
+            <br>
+            <label style="font-size:larger ;padding-left: 2%;"><b>Record Of Visits</b></label>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">Date</label>
+                <input type="date" class="form-control" id="daterecord" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 2%;">
+                <label for="">By Whom</label>
+                <input type="text" class="form-control" id="bywhom" placeholder="">
+            </div>
+            <br>
+        </div>
+    </div>
+</form>

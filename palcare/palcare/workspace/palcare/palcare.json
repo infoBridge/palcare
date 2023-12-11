@@ -1,0 +1,32 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2022-02-17 12:24:57.023993",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends": "Palcare",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "label": "Palcare",
+ "links": [],
+ "modified": "2022-06-14 11:29:08.212654",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Palcare",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 0,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "Palcare Home",
+   "link_to": "palcare-home",
+   "type": "Page"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2022-03-07 11:12:11.529928",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2022-03-28 12:42:19.812614",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "patient-bio",
+ "owner": "Administrator",
+ "page_name": "Patient Bio",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Patient Bio"
+}

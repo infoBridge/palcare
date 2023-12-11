@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "autoname": "NOTES-.####",
+ "creation": "2022-02-16 08:49:57.921049",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "patient",
+  "date",
+  "user",
+  "note_type",
+  "doctor_name",
+  "doctors_note",
+  "nurse_name",
+  "nurse_note",
+  "counsellor_name",
+  "c_note"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.note_type==\"Doctor\"",
+   "fieldname": "doctor_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor Name",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.note_type==\"Doctor\"",
+   "fieldname": "doctors_note",
+   "fieldtype": "Text",
+   "label": "Doctor's Note"
+  },
+  {
+   "depends_on": "eval:doc.note_type==\"Nurse\"",
+   "fieldname": "nurse_note",
+   "fieldtype": "Text",
+   "label": "Nurse's Note"
+  },
+  {
+   "depends_on": "eval:doc.note_type==\"Counsellor\"",
+   "fieldname": "c_note",
+   "fieldtype": "Text",
+   "label": "Counsellor's Note"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "note_type",
+   "fieldtype": "Select",
+   "label": "Note Type",
+   "options": "\nDoctor\nNurse\nCounsellor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.note_type==\"Nurse\"",
+   "fieldname": "nurse_name",
+   "fieldtype": "Link",
+   "label": "Nurse Name",
+   "options": "Nurse"
+  },
+  {
+   "depends_on": "eval:doc.note_type==\"Counsellor\"",
+   "fieldname": "counsellor_name",
+   "fieldtype": "Link",
+   "label": "Counsellor Name",
+   "options": "Counselor"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-23 12:44:03.698898",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Notes",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient",
+ "track_changes": 1
+}

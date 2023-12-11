@@ -1,0 +1,135 @@
+<style>
+    .visited_date {
+        font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;
+    }
+
+    .Start_Time {
+        font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;
+    }
+
+    .visit_time {
+        color: #395F6F;
+        position: relative;
+        margin-top: -5%;
+        float: right;
+        font-size: x-large;
+    }
+
+    .visit_date {
+        color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;
+    }
+
+    .float {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        bottom: 10%;
+        right: 20%;
+        background-color: #395F6F;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+
+    .my-float {
+        margin-top: 16px;
+
+
+    }
+    .edit-btn {
+        float: right;
+        margin-top: -2%;
+        border-radius: 4px;
+        font-weight: bold;
+        width: 7%;
+        font-size: large;
+        border-color: #395F6F;
+        color: #395F6F;
+        background-color: #E5E5E5;
+    }
+
+</style>
+
+
+
+<label style="display: block;max-width: 100%;margin: 0 auto;margin-top: -5%;margin-bottom: 12px;">
+    <h2
+    style="position: absolute;width: 324px;font-size: 38px;height: 20.26px;font-family: Inter;font-style: normal;font-weight: 500;line-height: 18px;color: #395F6F;">
+    Visit Details</h2><br>
+<button id="edit-btn" style="font-size: x-large;border-radius: 4px;" class="edit-btn">Edit</button>
+
+    <div class="content">
+        <p class="visited_date">Visit Date</p><br>
+        <p class="visit_date">visit_date</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Start_Time">Start Time</p><br>
+        <p class="visit_time"> visit_time</p><br><br><br>
+        <h2
+            style="position: absolute;width: 324px;font-size: 38px;height: 20.26px;font-family: Inter;font-style: normal;font-weight: 500;line-height: 18px;color: #395F6F;">
+            Visited by</h2><br>
+        <button id="edit-btn" style="font-size: x-large;border-radius: 4px;"class="edit-btn">Edit</button>
+
+        <p class="docter" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Docter in Charge</p><br>
+        <p class="Docter_in_Charge" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;"> Docter in Charge</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Other_Doc" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Other Doctor</p><br>
+        <p class="Other_Doctor" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Other_Doctor</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Nurse" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Nurse in Charge</p><br>
+        <p class="Nurse_in_Charge" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Nurse_in_Charge</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="other_nur" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Other Nurse</p><br>
+        <p class="Other_Nurse" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Other_Nurse</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Couns" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Counselor</p><br>
+        <p class="Counselor" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Counselor</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="staff" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Palcare Staff</p><br>
+        <p class="Palcare_Staff" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Palcare_Staff</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Others"style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Other</p><br>
+        <p class="Other" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Other</p><br><br><br>
+        <h2
+            style="position: absolute;width: 324px;font-size: 38px;height: 20.26px;font-family: Inter;font-style: normal;font-weight: 500;line-height: 18px;color: #395F6F;">
+            Visited by</h2><br>
+        <button id="edit-btn" style="font-size: x-large;border-radius: 4px;"class="edit-btn">Edit</button>
+
+        <p class="docter" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Enrolment</p><br>
+        <p class="Enrolment" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;"> Enrolment</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Other_Doc" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Follow Up</p><br>
+        <p class="followup" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Other_Doctor</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p class="Nurse" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Breavement</p><br>
+        <p class="breavement" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">Nurse_in_Charge</p><br><br><br>
+        <h2
+            style="position: absolute;width: 324px;font-size: 38px;height: 20.26px;font-family: Inter;font-style: normal;font-weight: 500;line-height: 18px;color: #395F6F;">
+            Visit details</h2><br>
+        <button id="edit-btn" style="font-size: x-large;border-radius: 4px;"class="edit-btn">Edit</button>
+
+        <p class="docter" style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">Date</p><br>
+        <p class="date" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;"> Date</p><br>
+        <hr style="width: 100%; border-top: 2px solid gray;">
+        <p  style="font-size: x-large;position: relative;margin-left: -.09%;margin-top: 5%;color: #8A8A8A;">By Whom</p><br>
+        <p class="by_whom" style=" color: #395F6F;position: relative;margin-top: -5%;float: right;font-size: x-large;">By Whom</p><br>
+    </div>
+</label>
+
+<<<<<<< HEAD
+<a href="https://patientrecords-palcareindia.frappe.cloud/app/visit-details/new-visit-details-1"
+=======
+<a href="https://dev-palcare.frappe.cloud/app/visit-details/new-visit-details-1"
+>>>>>>> 643a34f59d435479900f4c37ec18fab16938978e
+    class="float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-plus-lg"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+    </svg>
+</a>

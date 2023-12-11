@@ -1,0 +1,138 @@
+<style>
+    button:hover,
+    button:focus {
+        outline: none;
+    }
+</style>
+<p class="mt-1px patient_name" id="patient-id" style="position: absolute; color: #395F6F;font-style:inter;size:26px;font-size:33px;margin-left: 0.5%;margin-top: -1%;">
+</p><br><br><br>
+
+<div>
+
+    <button class="patient-feed-btn"
+        style="color: #395F6F; position: absolute; background: none;border: none;font-size: x-large;margin-left: 0.5%;margin-top: .5%;">Feed</button>
+
+    <button class="patient-bio-btn"
+        style="color: #395F6F; background: none;border: none;font-size: x-large;position: absolute; margin-top:.5%; margin-left: 23%;">Bio</button>
+    <button class="patient-details-btn active"
+        style="color: #395F6F; background: none;border: none;font-size: x-large;margin-top:.5%; margin-left: 47%;position: absolute;">Details</button><br>
+    <hr style="margin-left: 43.8%; margin-top: 3.5%;width: 15%; border-top: 4px solid #395F6F;position: absolute;">
+    <hr style="margin-left: 0%;margin-top: 3.8%; width: 100%; border-top: 2px solid #395F6F;position: absolute;">
+</div><br><br><br>
+
+
+<div class="row">
+
+    <a class="px-2 py-4 d-flex col-5" style="margin-left:1.5%;">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="gdetails"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label> General Details</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5 offset-1">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="report"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Reports</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5" style="margin-left:1.5%;">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="visit"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Visit details</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    
+    <a class="px-2 py-4 d-flex col-5 offset-1">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="equipment"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Equipment Loaned</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5" style="margin-left:1.5%;">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="medicaldetails"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Medical Details</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+
+    <a class="px-2 py-4 d-flex col-5 offset-1">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="notes"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Notes</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5" style="margin-left:1.5%;">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="patientsummary"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Patient Summary Card</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5 offset-1">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="care-plan"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Clinical assessment / Care plan</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5" style="margin-left:1.5%;">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="photos"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Photos</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+    <a class="px-2 py-4 d-flex col-5 offset-1">
+        <div class="w-100 d-flex align-items-center justify-content-between px-3 rounded" id="medication"
+            style="border:  .5px #395F6F solid;background-color:#F2F2F2;height: 45px;">
+            <label>Medications</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+            </svg>
+        </div>
+    </a>
+</div>

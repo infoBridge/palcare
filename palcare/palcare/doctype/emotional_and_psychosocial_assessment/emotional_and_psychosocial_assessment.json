@@ -1,0 +1,371 @@
+{
+ "actions": [],
+ "autoname": "EPAS-.####",
+ "creation": "2022-01-27 15:02:50.277476",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "patient",
+  "patient_name",
+  "date",
+  "family_and_social_aspects",
+  "family_s_ns",
+  "family_score",
+  "column_break_6",
+  "community_s_ns",
+  "community_score",
+  "column_break_9",
+  "family_s_sf_df",
+  "functionality_score",
+  "section_break_12",
+  "insight_into_illness",
+  "communication_pattern",
+  "withdrawn",
+  "easy",
+  "slurred",
+  "clear",
+  "unable",
+  "talk",
+  "others_1",
+  "emotional_stage_patient",
+  "shock",
+  "denial",
+  "hope",
+  "acceptance",
+  "others_2",
+  "emotions",
+  "sad",
+  "anger",
+  "guilt",
+  "shame",
+  "depr",
+  "suicide",
+  "others",
+  "fears_identified",
+  "of_death",
+  "of_severe_pain_of_leaving_family_behind",
+  "of_leaving_family_behind",
+  "of_meeting_god",
+  "others_specify_in_notes",
+  "spiritual_issues_identified",
+  "angry_with_god",
+  "broken_relationships",
+  "forgiveness",
+  "belief_in_after_life",
+  "others_specify_in_notes_section",
+  "palcare_team_member_id_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Patient",
+   "options": "Patient"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "family_and_social_aspects",
+   "fieldtype": "Section Break",
+   "label": "Family And Social Aspects"
+  },
+  {
+   "fieldname": "family_s_ns",
+   "fieldtype": "Select",
+   "label": "Family",
+   "options": "\nSupportive\nNon Supportive"
+  },
+  {
+   "fieldname": "community_s_ns",
+   "fieldtype": "Select",
+   "label": "Community",
+   "options": "\nSupportive\nNon Supportive"
+  },
+  {
+   "fieldname": "family_s_sf_df",
+   "fieldtype": "Select",
+   "label": "Functionality",
+   "options": "\nFunctional\nSemi Functional\nDysfunctional"
+  },
+  {
+   "fieldname": "insight_into_illness",
+   "fieldtype": "Select",
+   "label": "Insight into illness",
+   "options": "\nAware about Illness\nNot aware about Illness\nDoes not want to know\nIn Denial"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "communication_pattern",
+   "fieldtype": "Section Break",
+   "label": "Communication Pattern"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "emotional_stage_patient",
+   "fieldtype": "Section Break",
+   "label": "Emotional Stage - Patient"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "emotions",
+   "fieldtype": "Section Break",
+   "label": "Emotions"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "fears_identified",
+   "fieldtype": "Section Break",
+   "label": "Fears Identified"
+  },
+  {
+   "fieldname": "of_death",
+   "fieldtype": "Select",
+   "label": "Of Death",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "of_severe_pain_of_leaving_family_behind",
+   "fieldtype": "Select",
+   "label": "Of severe pain",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "of_meeting_god",
+   "fieldtype": "Select",
+   "label": "Of meeting God",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "others_specify_in_notes",
+   "fieldtype": "Small Text",
+   "label": "Others (Specify in Notes)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "spiritual_issues_identified",
+   "fieldtype": "Section Break",
+   "label": "Spiritual Issues identified"
+  },
+  {
+   "fieldname": "angry_with_god",
+   "fieldtype": "Select",
+   "label": "Angry with God",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "broken_relationships",
+   "fieldtype": "Select",
+   "label": "Broken Relationships",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "forgiveness",
+   "fieldtype": "Select",
+   "label": "Forgiveness",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "belief_in_after_life",
+   "fieldtype": "Select",
+   "label": "Belief in after life",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "others_specify_in_notes_section",
+   "fieldtype": "Small Text",
+   "label": "Others (Specify in notes section)"
+  },
+  {
+   "fieldname": "palcare_team_member_id_number",
+   "fieldtype": "Data",
+   "label": "PALCARE team member ID number"
+  },
+  {
+   "fieldname": "family_score",
+   "fieldtype": "Select",
+   "label": "Family Score",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "community_score",
+   "fieldtype": "Select",
+   "label": "Community Score",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "functionality_score",
+   "fieldtype": "Select",
+   "label": "Functionality Score",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "withdrawn",
+   "fieldtype": "Select",
+   "label": "W=Withdrawn",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "slurred",
+   "fieldtype": "Select",
+   "label": "SS= Slurred Speech",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "unable",
+   "fieldtype": "Select",
+   "label": "UT = Unable to Talk",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "talk",
+   "fieldtype": "Select",
+   "label": "TE=Talks Easily",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "shock",
+   "fieldtype": "Select",
+   "label": "S= Shock",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "denial",
+   "fieldtype": "Select",
+   "label": "D= Denial",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "hope",
+   "fieldtype": "Select",
+   "label": "H =Hope ",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "acceptance",
+   "fieldtype": "Select",
+   "label": "A =Acceptance",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "easy",
+   "fieldtype": "Select",
+   "label": " E = Easy to talk",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "clear",
+   "fieldtype": "Select",
+   "label": "CS =Clear Speech",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "sad",
+   "fieldtype": "Select",
+   "label": "S =Sad ",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "anger",
+   "fieldtype": "Select",
+   "label": "A = Anger ",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "guilt",
+   "fieldtype": "Select",
+   "label": "G= Guilt",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "shame",
+   "fieldtype": "Select",
+   "label": "SH = Shame",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "depr",
+   "fieldtype": "Select",
+   "label": "D = Depression",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "suicide",
+   "fieldtype": "Select",
+   "label": " ST = Suicidal Tendencies",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Small Text",
+   "label": "Others"
+  },
+  {
+   "fieldname": "others_1",
+   "fieldtype": "Small Text",
+   "label": "Others"
+  },
+  {
+   "fieldname": "others_2",
+   "fieldtype": "Small Text",
+   "label": "Others"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "of_leaving_family_behind",
+   "fieldtype": "Select",
+   "label": "Of leaving family behind",
+   "options": "\n0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-08 11:29:12.879062",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "Emotional And Psychosocial Assessment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "patient_name",
+ "track_changes": 1
+}

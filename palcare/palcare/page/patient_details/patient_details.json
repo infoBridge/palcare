@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2022-02-08 15:05:42.951060",
+ "docstatus": 0,
+ "doctype": "Page",
+ "icon": "",
+ "idx": 0,
+ "modified": "2022-02-08 15:05:42.951060",
+ "modified_by": "Administrator",
+ "module": "Palcare",
+ "name": "patient-details",
+ "owner": "Administrator",
+ "page_name": "patient-details",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0
+}

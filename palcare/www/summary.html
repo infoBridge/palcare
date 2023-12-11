@@ -1,0 +1,161 @@
+<style>
+    .form-control {
+        width: 60%;
+    }
+
+    .panel {
+        padding-bottom: 10px;
+    }
+
+    #cam {
+        border: 1px;
+        border-color: black;
+        border-style: solid;
+        width: 50%;
+    }
+
+    #photo {
+        border: 1px;
+        border-color: black;
+        border-style: dashed;
+        width: 50%;
+    }
+
+    .form-control1 {
+        width: 60%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        background-image: none;
+        border: 1px solid #F4F5F6;
+        border-radius: 4px;
+    }
+</style>
+
+<form id="vikings">
+    <datalist id="patientid">
+        <option value="">
+    </datalist>
+
+    <label style="font-size:larger ;"><b>New Patient Summary Card
+        </b></label>
+    <input type="submit" class="btn btn-primary float-right"
+        style="right:10%; z-index:9;background-color: #395F6F;color: white;" id="summary_save_btn" value="Save">
+    <br><br>
+        <div style="width: 100%;background-color: #F9FAFA;border-radius: 7px;margin-left: 5%;"><br>
+        <div class="form-row">
+            <div class="form-check col-md-12" style="padding-left: 7%;">
+                <input class="form-check-input" type="checkbox" id="npatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">New Patient</label>
+            </div>
+            <div class="form-check col-md-12" style="padding-left: 7%;">
+                <input class="form-check-input" type="checkbox" id="epatient" onclick="myFunction()">
+                <label class="form-check-label" for="gridCheck">Existing Patient</label>
+            </div>
+            <br><br>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;" id="pdisplay">
+                <label for="inputEmail4">Patient <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="patient" placeholder="" list="patientid">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;" id="fdisplay">
+                <label for="inputEmail4">First Name <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="first_name" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;" id="sdisplay">
+                <label for="inputEmail4">Surname <span style="color:red;">*</span></label>
+                <input type="text" class="form-control" id="surname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;" id="nameP">
+                <label for="inputPassword4">Patient Name</label>
+                <input type="text" readonly class="form-control" id="patientname" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;">
+                <label for="inputState">Summary Card Type <span style="color:red;">*</span></label><br>
+                <select id="summarycard" class="form-control1" required="true">
+                    <option selected></option>
+                    <option>Discharge</option>
+                    <option>Death</option>
+                    <option>Bereavement</option>
+                </select>
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;">
+                <label for="">Date <span style="color:red;">*</span></label>
+                <input type="date" class="form-control" id="pscdate" placeholder="" required="true">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;">
+                <label for="">No. of days with palcare</label>
+                <input type="text" class="form-control" id="dayspal" placeholder="">
+            </div>
+            <div class="dis box col-md-12" style="padding-left: 5.5%;"><label for="">Place of discharge</label>
+                <input type="text" class="form-control" id="discharge" placeholder="">
+            </div>
+            <div class="death box col-md-12" style="padding-left: 5.5%;"><label for="">Place of death</label>
+                <input type="text" class="form-control" id="death" placeholder="">
+            </div>
+            <div class="ber box col-md-12" style="padding-left: 5.5%;"><label for="">Place of bereavement</label>
+                <input type="text" class="form-control" id="bereavement" placeholder="">
+            </div>
+            <div class="form-group col-md-12" style="padding-left: 5.5%;">
+                <label for="">User</label>
+                <input type="text" class="form-control" id="user" placeholder="">
+            </div>
+        </div>
+    </div>
+</form>
+<div style="width:100%;background-color:#F9FAFA;border-radius:1px;margin-left:5%;">
+    <div class="form-group col-md-12" style="padding-left: 5.5%;">
+        <label>Image</label><br>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-default btn-sm btn-attach" id='patient-photo' data-toggle="modal"
+            data-target="#exampleModal">
+            Attach
+        </button><br>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="panel">
+                        <div class="modal-header">
+
+                            <button id="switchFrontBtn" class="btn btn-default btn-sm" style="margin-left: 1%;">Front
+                                Camera</button>
+                            <button id="switchBackBtn" class="btn btn-default btn-sm" style="margin-left: 5%;">Back
+                                Camera</button>
+                            <button id="snapBtn" class="btn btn-default btn-sm" style="margin-left: 5%;">Snap</button>
+                            <button type="button" onclick="vidOff()" class="close" data-dismiss="modal"
+                                aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <center>
+                            <div class="modal-body">
+                                <div style="width:100%">
+                                    <!-- add autoplay muted playsinline for iOS -->
+                                    <video id="cam" autoplay muted playsinline>Not available</video>
+                                    <canvas id="canvas" style="display:none"></canvas>
+                                    <img id="photo" alt="The screen capture will appear in this box.">
+                                </div>
+                            </div>
+                        </center>
+                        <div class="modal-footer">
+
+                            <button type="button" style="margin-left: 40%;" class="btn btn-primary"
+                                id="savebtn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <!-- Modal End -->
+        <div style="margin-bottom: 10px;">
+            <div class="missing-image" style="height: 10%;">
+                <img id="img_data1" class="d-none" style="width: 15%;margin-top: -10;"
+                    alt="The screen capture will appear in this box." src="">
+            </div>
+        </div>
+    </div>
+</div>
